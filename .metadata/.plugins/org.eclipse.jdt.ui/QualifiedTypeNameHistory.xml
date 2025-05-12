@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="sos.t3.a31.demo.client.GeometryServiceStub.CircleAreaResponse"/>
+    <fullyQualifiedTypeName name="sos.t3.a32.calculator.client.CalculatorServiceStub.TArrayAddition"/>
+    <fullyQualifiedTypeName name="sos.t3.a32.calculator.client.CalculatorServiceStub.Increment"/>
+    <fullyQualifiedTypeName name="sos.t3.a31.demo.GeometryServiceStub.CircleArea"/>
+    <fullyQualifiedTypeName name="sos.t3.a31.demo.client.GeometryServiceStub"/>
+    <fullyQualifiedTypeName name="sos.t3.a31.demo.client.GeometryServiceStub.CircleArea"/>
+</qualifiedTypeNameHistroy>

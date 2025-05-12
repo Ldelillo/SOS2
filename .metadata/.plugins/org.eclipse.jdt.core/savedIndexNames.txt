@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/home/lsduser/software/eclipse-workspace/.metadata/.plugins/org.eclipse.jdt.core
+3585291979.index
+1865797976.index
+4130919331.index
