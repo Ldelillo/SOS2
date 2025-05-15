@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables
-SERVICE_DIR=~/software/eclipse-workspace/servicio
-TOMCAT_SERVICES_DIR=~/software/apache-tomcat-9.0.87/webapps/axis2/WEB-INF/service
+SERVICE_DIR=./servicio
+TOMCAT_SERVICES_DIR=~/software/apache-tomcat-9.0.87/webapps/axis2/WEB-INF/services
 AAR_NAME=ETSIINFLibrary.aar
 
 echo "Compilando el servicio con Ant..."

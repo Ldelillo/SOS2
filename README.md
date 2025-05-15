@@ -6,3 +6,6 @@ Comando compilacion
 ./reiniciarservicio.sh
 
 Cuando entras en el servicio, cambiar la url de http://localhost:8080/axis2/services/ETSIINFLibrary?wsdl a http://localhost:8080/axis2/services/ETSIINFLibrary?wsdl2
+
+Comando commit:
+git commit -m "TEXTO DEL COMMIT"
