@@ -67,5 +67,44 @@ public class tests {
 
 
 
+        System.out.println("\nTesting ChangePassword");
+        es.upm.fi.sos.t3.backend.ChangePassword changepassword = new es.upm.fi.sos.t3.backend.ChangePassword();
+        changepassword.setChangePassword(new es.upm.fi.sos.t3.backend.xsd.ChangePasswordBackEnd());
+        changepassword.getChangePassword().setName("test2");
+        changepassword.getChangePassword().setOldpwd("patata");
+        changepassword.getChangePassword().setNewpwd("Coliflor");
+        es.upm.fi.sos.t3.backend.ChangePasswordResponse response3 = skeleton.changePassword(changepassword);
+
+        System.out.println("Usuario 'test2' cambia oldpwd 'patata' por nweped 'Coliflor' (esperado = true)" + response3.get_return().getResult());
+
+        response3 = skeleton.changePassword(changepassword);
+
+        System.out.println("Usuario 'test2' cambia oldpwd 'patata' por nweped 'Coliflor' (esperado = false)" + response3.get_return().getResult());
+
+
+        changepassword.getChangePassword().setName("test");
+        changepassword.getChangePassword().setOldpwd("patata");
+        changepassword.getChangePassword().setNewpwd("Coliflor");
+        response3 = skeleton.changePassword(changepassword);
+
+
+        System.out.println("Usuario 'test' cambia oldpwd 'patata' por nweped 'Coliflor' (esperado = true)" + response3.get_return().getResult());
+
+
+        changepassword.getChangePassword().setName("test2");
+        changepassword.getChangePassword().setOldpwd("Coliflor");
+        changepassword.getChangePassword().setNewpwd("Coliflor");
+        response3 = skeleton.changePassword(changepassword);
+
+
+        System.out.println("Usuario 'test2' cambia oldpwd 'Coliflor' por nweped 'Coliflor' (esperado = true)" + response3.get_return().getResult());
+
+
+
+
+
+
+        System.out.println("\nTesting login");
+
         }
 }
