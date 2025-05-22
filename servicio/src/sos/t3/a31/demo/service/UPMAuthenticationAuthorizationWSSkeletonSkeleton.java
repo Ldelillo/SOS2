@@ -161,6 +161,7 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
                 caracterActual = 64;
             }
             res += (char) caracterActual;
+            
         }
         return res;
     }
