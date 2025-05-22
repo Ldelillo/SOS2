@@ -26,12 +26,16 @@ public class tests {
 
         System.out.println("Usuario test2 añadido (esperado = true):\t" + response0.get_return().getResult());
 
-        System.out.println("Testing addUser");
+        System.out.println(response0.get_return().getPassword());
+
+        System.out.println("Testing ExistUser");
 
         es.upm.fi.sos.t3.backend.ExistUser existUser = new es.upm.fi.sos.t3.backend.ExistUser();
         existUser.setUsername(new es.upm.fi.sos.t3.backend.xsd.Username());
         existUser.getUsername().setName("test");
         es.upm.fi.sos.t3.backend.ExistUserResponse response1 = skeleton.existUser(existUser);
+
+        System.out.println("te jodes");
 
         System.out.println("Existe usuario 'test' (esperado = false):\t" + response1.get_return().getResult());
 
@@ -39,7 +43,6 @@ public class tests {
         response1 = skeleton.existUser(existUser);
 
         System.out.println("Existe usuario 'test1' (esperado = true):\t" + response1.get_return().getResult());
-
 
         }
 }

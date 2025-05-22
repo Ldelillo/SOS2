@@ -9,6 +9,8 @@ package sos.t3.a31.demo.service;
 
 import java.util.HashMap;
 
+import es.upm.fi.sos.t3.backend.AddUserResponse;
+import es.upm.fi.sos.t3.backend.xsd.AddUserResponseBackEnd;
 import es.upm.fi.sos.t3.backend.xsd.ExistUserResponse;
 
 /**
@@ -43,8 +45,21 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
      */
 
     public es.upm.fi.sos.t3.backend.AddUserResponse addUser(es.upm.fi.sos.t3.backend.AddUser addUser) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#addUser");
+        AddUserResponse response = new AddUserResponse();
+        String name = addUser.getUser().getName();
+        AddUserResponseBackEnd auxRes = new AddUserResponseBackEnd();
+        auxRes.setResult(false);
+        if(!users.containsKey(name)){
+            String PSWDaux = genPSWD(name);
+            users.put(name, PSWDaux);
+            auxRes.setResult(true);
+            auxRes.setPassword(PSWDaux);
+        }
+        response.set_return(auxRes);
+        return response;
+        /*
+            throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#addUser");
+        */
     }
 
     /**
@@ -58,11 +73,10 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
         es.upm.fi.sos.t3.backend.ExistUserResponse response = new es.upm.fi.sos.t3.backend.ExistUserResponse();
         ExistUserResponse auxRes = new ExistUserResponse();
         auxRes.setResult(false);
-        response.set_return(auxRes);
         if(users.containsKey(existUser.getUsername().getName())){
             auxRes.setResult(true);
-            response.set_return(auxRes);
         }
+        response.set_return(auxRes);
         return response;
         /*throw new java.lang.UnsupportedOperationException(
                 "Please implement " + this.getClass().getName() + "#existUser");
@@ -96,4 +110,17 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
                 "Please implement " + this.getClass().getName() + "#changePassword");
     }
 
+
+    //TODO:
+    private String genPSWD(String name){
+        String res = "patata";
+  /*       name = name.toUpperCase();
+        for(int i = 0;i< name.length();i++){
+            int caracterActual = (int)name.charAt(i);
+            if(caracterActual>=48 && caracterActual<=57){
+                caracterActual
+            }
+        }*/
+        return res;
+    }
 }
