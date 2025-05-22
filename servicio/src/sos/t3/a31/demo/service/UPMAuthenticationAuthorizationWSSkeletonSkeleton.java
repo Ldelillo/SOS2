@@ -10,8 +10,12 @@ package sos.t3.a31.demo.service;
 import java.util.HashMap;
 
 import es.upm.fi.sos.t3.backend.AddUserResponse;
+import es.upm.fi.sos.t3.backend.ChangePasswordResponse;
+import es.upm.fi.sos.t3.backend.LoginResponse;
+import es.upm.fi.sos.t3.backend.RemoveUserResponse;
 import es.upm.fi.sos.t3.backend.xsd.AddUserResponseBackEnd;
 import es.upm.fi.sos.t3.backend.xsd.ExistUserResponse;
+import es.upm.fi.sos.t3.backend.xsd.LoginResponseBackEnd;
 
 /**
  * UPMAuthenticationAuthorizationWSSkeletonSkeleton java skeleton for the
@@ -21,7 +25,7 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
     /**
      * La key es el name y el value es el password
      */
-    private HashMap<String,String> users = new HashMap<>();
+    private HashMap<String, String> users = new HashMap<>();
 
     /**
      * Auto generated method signature
@@ -30,11 +34,21 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
      * @return removeUserResponse
      */
 
-    public es.upm.fi.sos.t3.backend.RemoveUserResponse removeUser(
-            es.upm.fi.sos.t3.backend.RemoveUser removeUser) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement " + this.getClass().getName() + "#removeUser");
+    public es.upm.fi.sos.t3.backend.RemoveUserResponse removeUser(es.upm.fi.sos.t3.backend.RemoveUser removeUser) {
+        RemoveUserResponse response = new RemoveUserResponse();
+        String name = removeUser.getRemoveUser().getName();
+        es.upm.fi.sos.t3.backend.xsd.RemoveUserResponse resAux = new es.upm.fi.sos.t3.backend.xsd.RemoveUserResponse();
+        resAux.setResult(false);
+        if(users.containsKey(name)) {
+            users.remove(name);
+            resAux.setResult(true);
+        }
+        response.set_return(resAux);
+        return response;
+        /*
+         * throw new java.lang.UnsupportedOperationException(
+         * "Please implement " + this.getClass().getName() + "#removeUser");
+         */
     }
 
     /**
@@ -49,7 +63,7 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
         String name = addUser.getUser().getName();
         AddUserResponseBackEnd auxRes = new AddUserResponseBackEnd();
         auxRes.setResult(false);
-        if(!users.containsKey(name)){
+        if (!users.containsKey(name)) {
             String PSWDaux = genPSWD(name);
             users.put(name, PSWDaux);
             auxRes.setResult(true);
@@ -58,8 +72,9 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
         response.set_return(auxRes);
         return response;
         /*
-            throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#addUser");
-        */
+         * throw new java.lang.UnsupportedOperationException("Please implement " +
+         * this.getClass().getName() + "#addUser");
+         */
     }
 
     /**
@@ -68,19 +83,17 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
      * @param existUser
      * @return existUserResponse
      */
-    
+
     public es.upm.fi.sos.t3.backend.ExistUserResponse existUser(es.upm.fi.sos.t3.backend.ExistUser existUser) {
         es.upm.fi.sos.t3.backend.ExistUserResponse response = new es.upm.fi.sos.t3.backend.ExistUserResponse();
         ExistUserResponse auxRes = new ExistUserResponse();
-        auxRes.setResult(false);
-        if(users.containsKey(existUser.getUsername().getName())){
-            auxRes.setResult(true);
-        }
+        auxRes.setResult(users.containsKey(existUser.getUsername().getName()));
         response.set_return(auxRes);
         return response;
-        /*throw new java.lang.UnsupportedOperationException(
-                "Please implement " + this.getClass().getName() + "#existUser");
-        */
+        /*
+         * throw new java.lang.UnsupportedOperationException(
+         * "Please implement " + this.getClass().getName() + "#existUser");
+         */
     }
 
     /**
@@ -90,10 +103,20 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
      * @return loginResponse
      */
 
-    public es.upm.fi.sos.t3.backend.LoginResponse login(
-            es.upm.fi.sos.t3.backend.Login login) {
-        // TODO : fill this with the necessary business logic
+    public es.upm.fi.sos.t3.backend.LoginResponse login(es.upm.fi.sos.t3.backend.Login login) {
+        LoginResponse response = new LoginResponse();
+        String name = login.getLogin().getName();
+        String PSWDaux = login.getLogin().getPassword();
+        LoginResponseBackEnd resAux = new LoginResponseBackEnd();
+        resAux.setResult(false);
+        if (users.containsKey(name) && users.get(name).equals(PSWDaux)) {
+            resAux.setResult(true);
+        }
+        response.set_return(resAux);
+        return response;
+        /*
         throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#login");
+        */
     }
 
     /**
@@ -103,24 +126,36 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
      * @return changePasswordResponse
      */
 
-    public es.upm.fi.sos.t3.backend.ChangePasswordResponse changePassword(
-            es.upm.fi.sos.t3.backend.ChangePassword changePassword) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement " + this.getClass().getName() + "#changePassword");
+    public es.upm.fi.sos.t3.backend.ChangePasswordResponse changePassword(es.upm.fi.sos.t3.backend.ChangePassword changePassword) {
+        ChangePasswordResponse response = new ChangePasswordResponse();
+        String name = changePassword.getChangePassword().getName();
+        String PSWDold = changePassword.getChangePassword().getOldpwd();
+        String PSWDnew = changePassword.getChangePassword().getNewpwd();
+        es.upm.fi.sos.t3.backend.xsd.ChangePasswordResponse  resAux = new es.upm.fi.sos.t3.backend.xsd.ChangePasswordResponse();
+        resAux.setResult(false);
+        if (users.containsKey(name) && users.get(name).equals(PSWDold)) {
+            resAux.setResult(users.replace(name,PSWDold,PSWDnew));
+        }
+        response.set_return(resAux);
+        return response;
+        /*
+         * throw new java.lang.UnsupportedOperationException(
+         * "Please implement " + this.getClass().getName() + "#changePassword");
+         */
     }
 
-
-    //TODO:
-    private String genPSWD(String name){
+    // TODO:
+    private String genPSWD(String name) {
         String res = "patata";
-  /*       name = name.toUpperCase();
-        for(int i = 0;i< name.length();i++){
-            int caracterActual = (int)name.charAt(i);
-            if(caracterActual>=48 && caracterActual<=57){
-                caracterActual
-            }
-        }*/
+        /*
+         * name = name.toUpperCase();
+         * for(int i = 0;i< name.length();i++){
+         * int caracterActual = (int)name.charAt(i);
+         * if(caracterActual>=48 && caracterActual<=57){
+         * caracterActual
+         * }
+         * }
+         */
         return res;
     }
 }
