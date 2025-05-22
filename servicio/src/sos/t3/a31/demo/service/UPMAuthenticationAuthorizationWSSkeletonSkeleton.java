@@ -149,7 +149,8 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
 
     // TODO:
     private String genPSWD(String name) {
-        String res = "";
+        String res = "patata";
+        /*
         name = name.toUpperCase();
         for (int i = 0; i < name.length(); i++) {
             int caracterActual = (int) name.charAt(i);
@@ -163,6 +164,8 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
             res += (char) caracterActual;
             
         }
-        return res;
+            */
+        return res; 
+        
     }
 }

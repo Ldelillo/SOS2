@@ -136,11 +136,14 @@ public class tests {
         System.out.println("Login con user 'test2' y pwd 'patata' (esperado = false):\t" + response4.get_return().getResult());
 
         login.getLogin().setName("test2");
+        login.getLogin().setPassword("Coliflor");
         response4 = skeleton.login(login);
         System.out.println("Login con user 'test2' y pwd 'Coliflor' (esperado = true):\t" + response4.get_return().getResult());
 
-        
+
         login.getLogin().setName("test");
+        login.getLogin().setPassword("brotato");
+
         response4 = skeleton.login(login);
         System.out.println("Login con user 'test' y pwd 'brotato' (esperado = false):\t" + response4.get_return().getResult());
 
