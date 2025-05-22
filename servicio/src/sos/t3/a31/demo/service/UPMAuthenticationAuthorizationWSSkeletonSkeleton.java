@@ -39,7 +39,7 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
         String name = removeUser.getRemoveUser().getName();
         es.upm.fi.sos.t3.backend.xsd.RemoveUserResponse resAux = new es.upm.fi.sos.t3.backend.xsd.RemoveUserResponse();
         resAux.setResult(false);
-        if(users.containsKey(name)) {
+        if (users.containsKey(name)) {
             users.remove(name);
             resAux.setResult(true);
         }
@@ -65,6 +65,7 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
         auxRes.setResult(false);
         if (!users.containsKey(name)) {
             String PSWDaux = genPSWD(name);
+            System.out.println(PSWDaux);
             users.put(name, PSWDaux);
             auxRes.setResult(true);
             auxRes.setPassword(PSWDaux);
@@ -115,8 +116,9 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
         response.set_return(resAux);
         return response;
         /*
-        throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#login");
-        */
+         * throw new java.lang.UnsupportedOperationException("Please implement " +
+         * this.getClass().getName() + "#login");
+         */
     }
 
     /**
@@ -126,15 +128,16 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
      * @return changePasswordResponse
      */
 
-    public es.upm.fi.sos.t3.backend.ChangePasswordResponse changePassword(es.upm.fi.sos.t3.backend.ChangePassword changePassword) {
+    public es.upm.fi.sos.t3.backend.ChangePasswordResponse changePassword(
+            es.upm.fi.sos.t3.backend.ChangePassword changePassword) {
         ChangePasswordResponse response = new ChangePasswordResponse();
         String name = changePassword.getChangePassword().getName();
         String PSWDold = changePassword.getChangePassword().getOldpwd();
         String PSWDnew = changePassword.getChangePassword().getNewpwd();
-        es.upm.fi.sos.t3.backend.xsd.ChangePasswordResponse  resAux = new es.upm.fi.sos.t3.backend.xsd.ChangePasswordResponse();
+        es.upm.fi.sos.t3.backend.xsd.ChangePasswordResponse resAux = new es.upm.fi.sos.t3.backend.xsd.ChangePasswordResponse();
         resAux.setResult(false);
         if (users.containsKey(name) && users.get(name).equals(PSWDold)) {
-            resAux.setResult(users.replace(name,PSWDold,PSWDnew));
+            resAux.setResult(users.replace(name, PSWDold, PSWDnew));
         }
         response.set_return(resAux);
         return response;
@@ -146,16 +149,19 @@ public class UPMAuthenticationAuthorizationWSSkeletonSkeleton {
 
     // TODO:
     private String genPSWD(String name) {
-        String res = "patata";
-        /*
-         * name = name.toUpperCase();
-         * for(int i = 0;i< name.length();i++){
-         * int caracterActual = (int)name.charAt(i);
-         * if(caracterActual>=48 && caracterActual<=57){
-         * caracterActual
-         * }
-         * }
-         */
+        String res = "";
+        name = name.toUpperCase();
+        for (int i = 0; i < name.length(); i++) {
+            int caracterActual = (int) name.charAt(i);
+            if (caracterActual >= 48 && caracterActual <= 57) {
+                caracterActual = caracterActual - 47 % 10;
+            } else if (caracterActual >= 65 && caracterActual <= 90) {
+                caracterActual = caracterActual - 64 % 25;
+            } else {
+                caracterActual = 64;
+            }
+            res += (char) caracterActual;
+        }
         return res;
     }
 }
