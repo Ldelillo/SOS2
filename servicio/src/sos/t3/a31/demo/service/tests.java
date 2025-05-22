@@ -8,9 +8,9 @@ public class tests {
          
      UPMAuthenticationAuthorizationWSSkeletonSkeleton skeleton = new UPMAuthenticationAuthorizationWSSkeletonSkeleton();
 
+        System.out.println("TEST DE UPM AUTHENTICATION AUTHORIZATION");
 
-
-        System.out.println("Testing addUser");
+        System.out.println("\nTesting addUser");
 
         es.upm.fi.sos.t3.backend.AddUser addUser = new es.upm.fi.sos.t3.backend.AddUser();
         addUser.setUser(new es.upm.fi.sos.t3.backend.xsd.UserBackEnd());
@@ -146,6 +146,204 @@ public class tests {
 
         response4 = skeleton.login(login);
         System.out.println("Login con user 'test' y pwd 'brotato' (esperado = false):\t" + response4.get_return().getResult());
+
+
+
+
+        System.out.println("\n\nTEST DE ETSIINFLibrary");
+        ETSIINFLibrarySkeleton etsiinf = new ETSIINFLibrarySkeleton();
+
+
+        System.out.println("\nTesting addUser");
+        
+        es.upm.etsiinf.sos.AddUser addUser2 = new es.upm.etsiinf.sos.AddUser();
+        addUser2.setArgs0(new es.upm.etsiinf.sos.model.xsd.Username());
+        addUser2.getArgs0().setUsername("user");
+        es.upm.etsiinf.sos.AddUserResponse response5 = etsiinf.addUser(addUser2);
+
+        System.out.println("Añadiendo usuario de nombre 'user' (esperado = true):\t" + response5.get_return().getResponse());
+        System.out.println("Contraseña generada:\t" + response5.get_return().getPwd());
+        response5 = etsiinf.addUser(addUser2);
+
+        System.out.println("Añadiendo usuario de nombre 'user' (esperado = false):\t" + response5.get_return().getResponse());
+        
+        addUser2.getArgs0().setUsername("user0");
+        response5 = etsiinf.addUser(addUser2);
+        System.out.println("Añadiendo usuario de nombre 'user0' (esperado = true):\t" + response5.get_return().getResponse());
+        System.out.println("Contraseña generada:\t" + response5.get_return().getPwd());
+
+
+
+
+        System.out.println("\nTesting login");
+
+        es.upm.etsiinf.sos.Login login2 = new es.upm.etsiinf.sos.Login();
+        login2.setArgs0(new es.upm.etsiinf.sos.model.xsd.User());
+        login2.getArgs0().setName("user");
+        login2.getArgs0().setPwd("patata");
+        es.upm.etsiinf.sos.LoginResponse response6 = etsiinf.login(login2);
+
+        System.out.println("Login con usuario 'user' y contraseña 'patata' (esperado = true):\t" + response6.get_return().getResponse());
+
+        response6 = etsiinf.login(login2);
+
+        System.out.println("Login con usuario 'user' y contraseña 'patata' (esperado = true):\t" + response6.get_return().getResponse());
+
+        login2.getArgs0().setName("usuario");
+        login2.getArgs0().setPwd("patata");
+
+        response6 = etsiinf.login(login2);
+
+        System.out.println("Login con usuario 'usuario' y contraseña 'patata' (esperado = false):\t" + response6.get_return().getResponse());
+        
+        login2.getArgs0().setName("user");
+        login2.getArgs0().setPwd("mala");
+
+        response6 = etsiinf.login(login2);
+
+        System.out.println("Login con usuario 'user' y contraseña 'mala' (esperado = false):\t" + response6.get_return().getResponse());
+
+
+
+
+        System.out.println("\nTesting logout");
+        System.out.println("TODO");
+        es.upm.etsiinf.sos.LogoutResponse response7;
+
+
+
+
+
+        System.out.println("\nTesting deleteUser");
+        es.upm.etsiinf.sos.DeleteUser deleteUser = new es.upm.etsiinf.sos.DeleteUser();
+        deleteUser.setArgs0(new es.upm.etsiinf.sos.model.xsd.Username());
+        deleteUser.getArgs0().setUsername("user0");
+        es.upm.etsiinf.sos.DeleteUserResponse response8 = etsiinf.deleteUser(deleteUser);
+
+        System.out.println("Eliminado 'user0' (esperado = true):\t" + response8.get_return().getResponse());
+        response8 = etsiinf.deleteUser(deleteUser);
+        System.out.println("Eliminado 'user0' (esperado = false):\t" + response8.get_return().getResponse());
+
+
+        deleteUser.getArgs0().setUsername("user999");
+        response8 = etsiinf.deleteUser(deleteUser);
+        System.out.println("Eliminado 'user999' (esperado = false):\t" + response8.get_return().getResponse());
+
+
+
+
+
+        System.out.println("\nTesting changePassword");
+        es.upm.etsiinf.sos.ChangePassword changePassword2 = new es.upm.etsiinf.sos.ChangePassword();
+        changePassword2.setArgs0(new es.upm.etsiinf.sos.model.xsd.PasswordPair());
+        changePassword2.getArgs0().setOldpwd(null);
+        changePassword2.getArgs0().setNewpwd(null);
+        es.upm.etsiinf.sos.ChangePasswordResponse response9 = etsiinf.changePassword(changePassword2);
+
+        System.out.println("TODO");
+
+
+
+
+
+        System.out.println("\nTesting addBook");
+
+        es.upm.etsiinf.sos.AddBook addBook = new es.upm.etsiinf.sos.AddBook();
+        addBook.setArgs0(new es.upm.etsiinf.sos.model.xsd.Book());
+        String[] authors = {"autor1", "autor2"};
+        addBook.getArgs0().setAuthors(authors);
+        addBook.getArgs0().setISSN("123456");
+        addBook.getArgs0().setName("libro");
+
+        es.upm.etsiinf.sos.AddBookResponse response10 = etsiinf.addBook(addBook);
+        System.out.println("Libro añadido: 'libro', '123456', [autor1, autor2] (esperado = true):\t" + response10.get_return().getResponse());
+        response10 = etsiinf.addBook(addBook);
+        System.out.println("Libro añadido: 'libro', '123456', [autor1, autor2] (esperado = true):\t" + response10.get_return().getResponse());
+
+        addBook.getArgs0().setAuthors(null);
+        response10 = etsiinf.addBook(addBook);
+        System.out.println("Libro añadido: 'libro', '123456', null (esperado = false):\t" + response10.get_return().getResponse());
+
+        String[] author = {"autor1"};
+        addBook.getArgs0().setAuthors(author);
+        addBook.getArgs0().setISSN("789012");
+        addBook.getArgs0().setName("libro2");
+        response10 = etsiinf.addBook(addBook);
+
+        System.out.println("Libro añadido: 'libro2', '789012', [autor1] (esperado = true):\t" + response10.get_return().getResponse());
+
+
+
+
+
+
+
+        System.out.println("\nTesting removeBook");
+
+        es.upm.etsiinf.sos.RemoveBook removeBook = new es.upm.etsiinf.sos.RemoveBook();
+        removeBook.setArgs0("123456");
+        es.upm.etsiinf.sos.RemoveBookResponse response11 = etsiinf.removeBook(removeBook);
+        
+        System.out.println("Eliminado libro con ISSN: '123456' (esperado = true):\t" + response11.get_return().getResponse());
+
+        removeBook.setArgs0("111111");
+        response11 = etsiinf.removeBook(removeBook);
+
+        System.out.println("Eliminado libro con ISSN: '111111' (esperado = false):\t" + response11.get_return().getResponse());
+
+
+
+
+        System.out.println("\nTesting getBook");
+
+        es.upm.etsiinf.sos.GetBook getBook = new es.upm.etsiinf.sos.GetBook();
+        getBook.setArgs0("123456");
+        es.upm.etsiinf.sos.GetBookResponse response12 = etsiinf.getBook(getBook);
+        System.out.println("Peticion libro con ISSN: '123456':\t");
+        System.out.println("nombre esperado = libro:\t" + response12.get_return().getName());
+        System.out.println("ISSN esperado = 123456:\t" + response12.get_return().getISSN());
+        System.out.println("autor esperado = [autor1, autor2]:\t" + response12.get_return().getAuthors());
+
+        getBook.setArgs0("111111");
+        response12 = etsiinf.getBook(getBook);
+        System.out.println("Peticion libro con ISSN: '111111': (esprado = null)\t" + response12.get_return());
+      
+        
+
+
+
+        System.out.println("\nTesting listBooks");
+
+
+
+
+
+
+
+        System.out.println("\nTesting getBooksFromAuthor");
+
+
+
+
+
+
+        System.out.println("\nTesting borrowBook");
+
+
+
+
+
+
+
+        System.out.println("\nTesting returnBook");
+
+
+
+
+
+
+
+        System.out.println("\nTesting listBorrowedBooks");
 
         }
 }
