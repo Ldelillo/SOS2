@@ -4,9 +4,9 @@
 <serviceGroup>
     <service name="ETSIINFLibrary">
         <messageReceivers>
-            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="sos.t3.a31.demo.service.ETSIINFLibraryMessageReceiverInOut"/>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="sos.t3.a32.library.ETSIINFLibraryMessageReceiverInOut"/>
         </messageReceivers>
-        <parameter name="ServiceClass">sos.t3.a31.demo.service.ETSIINFLibrarySkeleton</parameter>
+        <parameter name="ServiceClass">sos.t3.a32.library.ETSIINFLibrarySkeleton</parameter>
         <parameter name="useOriginalwsdl">true</parameter>
         <parameter name="modifyUserWSDLPortAddress">true</parameter>
         <operation name="borrowBook" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://sos.etsiinf.upm.es">

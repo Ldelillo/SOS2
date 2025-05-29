@@ -6,7 +6,7 @@
  * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
 
-    package sos.t3.a31.demo.client;
+    package sos.t3.a32.library.client;
 
     /**
      *  ETSIINFLibraryCallbackHandler Callback class, Users can extend this class and implement
@@ -49,7 +49,7 @@
             * override this method for handling normal response from borrowBook operation
             */
            public void receiveResultborrowBook(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse result
                         ) {
            }
 
@@ -65,7 +65,7 @@
             * override this method for handling normal response from returnBook operation
             */
            public void receiveResultreturnBook(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse result
                         ) {
            }
 
@@ -81,7 +81,7 @@
             * override this method for handling normal response from logout operation
             */
            public void receiveResultlogout(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse result
                         ) {
            }
 
@@ -97,7 +97,7 @@
             * override this method for handling normal response from removeBook operation
             */
            public void receiveResultremoveBook(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse result
                         ) {
            }
 
@@ -113,7 +113,7 @@
             * override this method for handling normal response from deleteUser operation
             */
            public void receiveResultdeleteUser(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse result
                         ) {
            }
 
@@ -129,7 +129,7 @@
             * override this method for handling normal response from addUser operation
             */
            public void receiveResultaddUser(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE result
                         ) {
            }
 
@@ -145,7 +145,7 @@
             * override this method for handling normal response from getBook operation
             */
            public void receiveResultgetBook(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse result
                         ) {
            }
 
@@ -161,7 +161,7 @@
             * override this method for handling normal response from listBooks operation
             */
            public void receiveResultlistBooks(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse result
                         ) {
            }
 
@@ -177,7 +177,7 @@
             * override this method for handling normal response from changePassword operation
             */
            public void receiveResultchangePassword(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse result
                         ) {
            }
 
@@ -193,7 +193,7 @@
             * override this method for handling normal response from login operation
             */
            public void receiveResultlogin(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse result
                         ) {
            }
 
@@ -209,7 +209,7 @@
             * override this method for handling normal response from addBook operation
             */
            public void receiveResultaddBook(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse result
                         ) {
            }
 
@@ -225,7 +225,7 @@
             * override this method for handling normal response from getBooksFromAuthor operation
             */
            public void receiveResultgetBooksFromAuthor(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse result
                         ) {
            }
 
@@ -241,7 +241,7 @@
             * override this method for handling normal response from listBorrowedBooks operation
             */
            public void receiveResultlistBorrowedBooks(
-                    sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse result
+                    sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse result
                         ) {
            }
 

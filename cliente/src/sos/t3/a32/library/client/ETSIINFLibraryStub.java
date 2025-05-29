@@ -5,7 +5,7 @@
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
-        package sos.t3.a31.demo.client;
+        package sos.t3.a32.library.client;
 
         
 
@@ -276,16 +276,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#borrowBook
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#borrowBook
                      * @param borrowBook0
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse borrowBook(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse borrowBook(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBook borrowBook0)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBook borrowBook0)
                         
 
                     throws java.rmi.RemoteException
@@ -336,11 +336,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -398,15 +398,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startborrowBook
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startborrowBook
                     * @param borrowBook0
                 
                 */
                 public  void startborrowBook(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBook borrowBook0,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBook borrowBook0,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -450,10 +450,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultborrowBook(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorborrowBook(e);
@@ -545,16 +545,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#returnBook
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#returnBook
                      * @param returnBook2
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse returnBook(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse returnBook(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBook returnBook2)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBook returnBook2)
                         
 
                     throws java.rmi.RemoteException
@@ -605,11 +605,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -667,15 +667,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startreturnBook
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startreturnBook
                     * @param returnBook2
                 
                 */
                 public  void startreturnBook(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBook returnBook2,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBook returnBook2,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -719,10 +719,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultreturnBook(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorreturnBook(e);
@@ -814,16 +814,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#logout
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#logout
                      * @param logout4
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse logout(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse logout(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.Logout logout4)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.Logout logout4)
                         
 
                     throws java.rmi.RemoteException
@@ -874,11 +874,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -936,15 +936,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startlogout
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startlogout
                     * @param logout4
                 
                 */
                 public  void startlogout(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.Logout logout4,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.Logout logout4,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -988,10 +988,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultlogout(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorlogout(e);
@@ -1083,16 +1083,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#removeBook
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#removeBook
                      * @param removeBook6
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse removeBook(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse removeBook(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBook removeBook6)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBook removeBook6)
                         
 
                     throws java.rmi.RemoteException
@@ -1143,11 +1143,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -1205,15 +1205,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startremoveBook
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startremoveBook
                     * @param removeBook6
                 
                 */
                 public  void startremoveBook(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBook removeBook6,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBook removeBook6,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -1257,10 +1257,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultremoveBook(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorremoveBook(e);
@@ -1352,16 +1352,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#deleteUser
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#deleteUser
                      * @param deleteUser8
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse deleteUser(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse deleteUser(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUser deleteUser8)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUser deleteUser8)
                         
 
                     throws java.rmi.RemoteException
@@ -1412,11 +1412,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -1474,15 +1474,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startdeleteUser
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startdeleteUser
                     * @param deleteUser8
                 
                 */
                 public  void startdeleteUser(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUser deleteUser8,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUser deleteUser8,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -1526,10 +1526,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultdeleteUser(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrordeleteUser(e);
@@ -1621,16 +1621,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#addUser
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#addUser
                      * @param addUser10
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE addUser(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE addUser(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUser addUser10)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.AddUser addUser10)
                         
 
                     throws java.rmi.RemoteException
@@ -1681,11 +1681,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -1743,15 +1743,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startaddUser
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startaddUser
                     * @param addUser10
                 
                 */
                 public  void startaddUser(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUser addUser10,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.AddUser addUser10,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -1795,10 +1795,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultaddUser(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErroraddUser(e);
@@ -1890,16 +1890,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#getBook
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#getBook
                      * @param getBook12
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse getBook(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse getBook(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBook getBook12)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.GetBook getBook12)
                         
 
                     throws java.rmi.RemoteException
@@ -1950,11 +1950,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -2012,15 +2012,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startgetBook
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startgetBook
                     * @param getBook12
                 
                 */
                 public  void startgetBook(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBook getBook12,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.GetBook getBook12,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -2064,10 +2064,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultgetBook(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorgetBook(e);
@@ -2159,16 +2159,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#listBooks
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#listBooks
                      * @param listBooks14
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse listBooks(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse listBooks(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooks listBooks14)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooks listBooks14)
                         
 
                     throws java.rmi.RemoteException
@@ -2219,11 +2219,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -2281,15 +2281,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startlistBooks
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startlistBooks
                     * @param listBooks14
                 
                 */
                 public  void startlistBooks(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooks listBooks14,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooks listBooks14,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -2333,10 +2333,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultlistBooks(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorlistBooks(e);
@@ -2428,16 +2428,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#changePassword
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#changePassword
                      * @param changePassword16
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse changePassword(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse changePassword(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePassword changePassword16)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePassword changePassword16)
                         
 
                     throws java.rmi.RemoteException
@@ -2488,11 +2488,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -2550,15 +2550,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startchangePassword
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startchangePassword
                     * @param changePassword16
                 
                 */
                 public  void startchangePassword(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePassword changePassword16,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePassword changePassword16,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -2602,10 +2602,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultchangePassword(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorchangePassword(e);
@@ -2697,16 +2697,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#login
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#login
                      * @param login18
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse login(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse login(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.Login login18)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.Login login18)
                         
 
                     throws java.rmi.RemoteException
@@ -2757,11 +2757,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -2819,15 +2819,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startlogin
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startlogin
                     * @param login18
                 
                 */
                 public  void startlogin(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.Login login18,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.Login login18,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -2871,10 +2871,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultlogin(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorlogin(e);
@@ -2966,16 +2966,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#addBook
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#addBook
                      * @param addBook20
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse addBook(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse addBook(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBook addBook20)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.AddBook addBook20)
                         
 
                     throws java.rmi.RemoteException
@@ -3026,11 +3026,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -3088,15 +3088,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startaddBook
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startaddBook
                     * @param addBook20
                 
                 */
                 public  void startaddBook(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBook addBook20,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.AddBook addBook20,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -3140,10 +3140,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultaddBook(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErroraddBook(e);
@@ -3235,16 +3235,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#getBooksFromAuthor
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#getBooksFromAuthor
                      * @param getBooksFromAuthor22
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse getBooksFromAuthor(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse getBooksFromAuthor(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthor getBooksFromAuthor22)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthor getBooksFromAuthor22)
                         
 
                     throws java.rmi.RemoteException
@@ -3295,11 +3295,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -3357,15 +3357,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startgetBooksFromAuthor
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startgetBooksFromAuthor
                     * @param getBooksFromAuthor22
                 
                 */
                 public  void startgetBooksFromAuthor(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthor getBooksFromAuthor22,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthor getBooksFromAuthor22,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -3409,10 +3409,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultgetBooksFromAuthor(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorgetBooksFromAuthor(e);
@@ -3504,16 +3504,16 @@
                     /**
                      * Auto generated method signature
                      * 
-                     * @see sos.t3.a31.demo.client.ETSIINFLibrary#listBorrowedBooks
+                     * @see sos.t3.a32.library.client.ETSIINFLibrary#listBorrowedBooks
                      * @param listBorrowedBooks24
                     
                      */
 
                     
 
-                            public  sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse listBorrowedBooks(
+                            public  sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse listBorrowedBooks(
 
-                            sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooks listBorrowedBooks24)
+                            sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooks listBorrowedBooks24)
                         
 
                     throws java.rmi.RemoteException
@@ -3564,11 +3564,11 @@
                 
                                 java.lang.Object object = fromOM(
                                              _returnEnv.getBody().getFirstElement() ,
-                                             sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.class,
+                                             sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.class,
                                               getEnvelopeNamespaces(_returnEnv));
 
                                
-                                        return (sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse)object;
+                                        return (sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse)object;
                                    
          }catch(org.apache.axis2.AxisFault f){
 
@@ -3626,15 +3626,15 @@
                 /**
                 * Auto generated method signature for Asynchronous Invocations
                 * 
-                * @see sos.t3.a31.demo.client.ETSIINFLibrary#startlistBorrowedBooks
+                * @see sos.t3.a32.library.client.ETSIINFLibrary#startlistBorrowedBooks
                     * @param listBorrowedBooks24
                 
                 */
                 public  void startlistBorrowedBooks(
 
-                 sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooks listBorrowedBooks24,
+                 sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooks listBorrowedBooks24,
 
-                  final sos.t3.a31.demo.client.ETSIINFLibraryCallbackHandler callback)
+                  final sos.t3.a32.library.client.ETSIINFLibraryCallbackHandler callback)
 
                 throws java.rmi.RemoteException{
 
@@ -3678,10 +3678,10 @@
                                 org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
                                 
                                         java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(),
-                                                                         sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.class,
+                                                                         sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.class,
                                                                          getEnvelopeNamespaces(resultEnv));
                                         callback.receiveResultlistBorrowedBooks(
-                                        (sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse)object);
+                                        (sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse)object);
                                         
                             } catch (org.apache.axis2.AxisFault e) {
                                 callback.receiveErrorlistBorrowedBooks(e);
@@ -19604,12 +19604,12 @@
         }
            
     
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBook param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBook param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBook.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBook.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19618,12 +19618,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19632,12 +19632,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBook param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBook param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBook.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBook.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19646,12 +19646,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19660,12 +19660,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.Logout param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.Logout param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.Logout.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.Logout.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19674,12 +19674,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19688,12 +19688,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBook param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBook param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBook.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBook.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19702,12 +19702,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19716,12 +19716,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUser param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUser param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUser.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUser.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19730,12 +19730,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19744,12 +19744,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUser param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.AddUser param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUser.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.AddUser.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19758,12 +19758,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19772,12 +19772,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBook param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBook param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBook.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBook.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19786,12 +19786,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19800,12 +19800,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooks param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooks param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooks.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooks.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19814,12 +19814,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19828,12 +19828,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePassword param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePassword param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePassword.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePassword.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19842,12 +19842,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19856,12 +19856,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.Login param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.Login param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.Login.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.Login.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19870,12 +19870,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19884,12 +19884,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBook param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.AddBook param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBook.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.AddBook.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19898,12 +19898,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19912,12 +19912,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthor param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthor param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthor.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthor.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19926,12 +19926,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19940,12 +19940,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooks param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooks param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooks.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooks.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19954,12 +19954,12 @@
 
             }
         
-            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse param, boolean optimizeContent)
+            private  org.apache.axiom.om.OMElement  toOM(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse param, boolean optimizeContent)
             throws org.apache.axis2.AxisFault {
 
             
                         try{
-                             return param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.MY_QNAME,
+                             return param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.MY_QNAME,
                                           org.apache.axiom.om.OMAbstractFactory.getOMFactory());
                         } catch(org.apache.axis2.databinding.ADBException e){
                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19969,14 +19969,14 @@
             }
         
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBook.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBook.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -19990,14 +19990,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBook.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBook.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20011,14 +20011,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.Logout param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.Logout param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.Logout.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.Logout.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20032,14 +20032,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBook.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBook.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20053,14 +20053,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUser param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUser param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUser.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUser.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20074,14 +20074,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUser param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.AddUser param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUser.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.AddUser.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20095,14 +20095,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.GetBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBook.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBook.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20116,14 +20116,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooks param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooks param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooks.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooks.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20137,14 +20137,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePassword param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePassword param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePassword.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePassword.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20158,14 +20158,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.Login param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.Login param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.Login.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.Login.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20179,14 +20179,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.AddBook param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBook.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.AddBook.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20200,14 +20200,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooks param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooks param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooks.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooks.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20221,14 +20221,14 @@
 
                              
                                     
-                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthor param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
+                                        private  org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthor param, boolean optimizeContent, javax.xml.namespace.QName methodQName)
                                         throws org.apache.axis2.AxisFault{
 
                                              
                                                     try{
 
                                                             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthor.MY_QNAME,factory));
+                                                            emptyEnvelope.getBody().addChild(param.getOMElement(sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthor.MY_QNAME,factory));
                                                             return emptyEnvelope;
                                                         } catch(org.apache.axis2.databinding.ADBException e){
                                                             throw org.apache.axis2.AxisFault.makeFault(e);
@@ -20258,184 +20258,184 @@
 
         try {
         
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBook.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBook.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.BorrowBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.BorrowBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBook.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBook.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.ReturnBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.ReturnBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.Logout.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.Logout.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.Logout.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.Logout.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.LogoutResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.LogoutResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBook.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBook.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.RemoveBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.RemoveBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUser.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUser.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUser.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUser.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.DeleteUserResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.DeleteUserResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUser.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.AddUser.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUser.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.AddUser.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.AddUserResponseE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.AddUserResponseE.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBook.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.GetBook.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.GetBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.GetBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooks.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooks.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooks.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooks.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBooksResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.ListBooksResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePassword.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePassword.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePassword.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePassword.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.ChangePasswordResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.ChangePasswordResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.Login.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.Login.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.Login.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.Login.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.LoginResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.LoginResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBook.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.AddBook.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.AddBook.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.AddBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.AddBookResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthor.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthor.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthor.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthor.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.GetBooksFromAuthorResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooks.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooks.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooks.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooks.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }
            
-                if (sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.class.equals(type)){
+                if (sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.class.equals(type)){
                 
-                           return sos.t3.a31.demo.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                           return sos.t3.a32.library.client.ETSIINFLibraryStub.ListBorrowedBooksResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
                     
 
                 }

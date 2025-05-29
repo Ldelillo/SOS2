@@ -5,7 +5,7 @@
  * This file was auto-generated from WSDL
  * by the Apache Axis2 version: 1.6.2  Built on : Apr 17, 2012 (05:33:49 IST)
  */
-package sos.t3.a31.demo.service;
+package sos.t3.a32.library;
 
 /**
  * ETSIINFLibrarySkeleton java skeleton for the axisService
@@ -88,7 +88,8 @@ public class ETSIINFLibrarySkeleton {
      * @return addUserResponse
      */
 
-    public es.upm.etsiinf.sos.AddUserResponse addUser(es.upm.etsiinf.sos.AddUser addUser) {
+    public es.upm.etsiinf.sos.AddUserResponse addUser(
+            es.upm.etsiinf.sos.AddUser addUser) {
         // TODO : fill this with the necessary business logic
         throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#addUser");
     }
