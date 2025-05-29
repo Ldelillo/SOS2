@@ -19,8 +19,7 @@ public class ETSIINFLibrarySkeleton {
      * @return borrowBookResponse
      */
 
-    public es.upm.etsiinf.sos.BorrowBookResponse borrowBook(
-            es.upm.etsiinf.sos.BorrowBook borrowBook) {
+    public es.upm.etsiinf.sos.BorrowBookResponse borrowBook(es.upm.etsiinf.sos.BorrowBook borrowBook) {
         // TODO : fill this with the necessary business logic
         throw new java.lang.UnsupportedOperationException(
                 "Please implement " + this.getClass().getName() + "#borrowBook");
@@ -142,8 +141,8 @@ public class ETSIINFLibrarySkeleton {
      * @return loginResponse
      */
 
-    public es.upm.etsiinf.sos.LoginResponse login(
-            es.upm.etsiinf.sos.Login login) {
+    public es.upm.etsiinf.sos.LoginResponse login(es.upm.etsiinf.sos.Login login) {
+        
         // TODO : fill this with the necessary business logic
         throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#login");
     }
@@ -155,8 +154,7 @@ public class ETSIINFLibrarySkeleton {
      * @return addBookResponse
      */
 
-    public es.upm.etsiinf.sos.AddBookResponse addBook(
-            es.upm.etsiinf.sos.AddBook addBook) {
+    public es.upm.etsiinf.sos.AddBookResponse addBook(es.upm.etsiinf.sos.AddBook addBook) {
         // TODO : fill this with the necessary business logic
         throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#addBook");
     }
