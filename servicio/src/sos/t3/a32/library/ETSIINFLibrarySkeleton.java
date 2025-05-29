@@ -7,11 +7,39 @@
  */
 package sos.t3.a32.library;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.axis2.AxisFault;
+
+import es.upm.etsiinf.sos.*;
+import es.upm.etsiinf.sos.model.xsd.User;
 /**
  * ETSIINFLibrarySkeleton java skeleton for the axisService
  */
 public class ETSIINFLibrarySkeleton {
 
+
+private static List<String> userslogged;
+
+
+private User admin;
+
+private boolean loged;
+
+/**
+ * Constructor 
+ */
+public ETSIINFLibrarySkeleton(){
+loged = false;
+
+admin = new User();
+admin.setName("admin");
+admin.setPwd("admin");
+
+userslogged = new ArrayList<String>();
+
+}
     /**
      * Auto generated method signature
      * 
@@ -144,7 +172,24 @@ public class ETSIINFLibrarySkeleton {
     public es.upm.etsiinf.sos.LoginResponse login(es.upm.etsiinf.sos.Login login) {
         
         // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#login");
+        // throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#login");
+    
+    es.upm.etsiinf.sos.LoginResponse response = new es.upm.etsiinf.sos.LoginResponse();
+    
+    try {
+        es.upm.etsiinf.sos.auth.UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+    
+
+        es.upm.etsiinf.sos.auth.UPMAuthenticationAuthorizationWSSkeletonStub.LoginResponse response2 = 
+            stub.login(new es.upm.etsiinf.sos.auth.UPMAuthenticationAuthorizationWSSkeletonStub.Login() );
+    
+    } catch (Exception e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+    
+    return response;
+    
     }
 
     /**
