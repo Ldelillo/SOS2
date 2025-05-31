@@ -419,8 +419,7 @@ public class pruebas {
         }
         }
         
-        responselListBorrowedBooks = stub1.listBorrowedBooks(listBorrowedBooks);
-        //TODO: mirame esto que este bien @sersayen
+        responselListBorrowedBooks = stub2.listBorrowedBooks(listBorrowedBooks);
         System.out.println("Pidiendo lista de libros prestados:\t" + responselListBorrowedBooks.get_return().getResult());
         
         if(responselListBorrowedBooks.get_return().getResult()){
