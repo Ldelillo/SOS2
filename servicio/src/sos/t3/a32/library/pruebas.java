@@ -1,21 +1,17 @@
-package sos.t3.a32.library.client;
+package sos.t3.a32.library;
 
-import java.rmi.RemoteException;
-import org.apache.axis2.AxisFault;
+import es.upm.etsiinf.sos.model.xsd.User;
+import sos.t3.a32.library.ETSIINFLibrarySkeleton .*;
+import es.upm.etsiinf.sos.*;
+import es.upm.etsiinf.sos.model.xsd.*;
 
-
-import sos.t3.a32.library.client.ETSIINFLibraryStub .*;
-
-
-public class ETSIINFLibraryClient {
-
-    public static void main(String[] args) throws RemoteException{
-        try{
-        ETSIINFLibraryStub stubAdmin = new ETSIINFLibraryStub();
-        ETSIINFLibraryStub stub1 = new ETSIINFLibraryStub();
-        ETSIINFLibraryStub stub1_1 = new ETSIINFLibraryStub();
-        ETSIINFLibraryStub stub2 = new ETSIINFLibraryStub();
-        ETSIINFLibraryStub stub3 = new ETSIINFLibraryStub();
+public class pruebas {
+    public static void main(String[] args) {
+        ETSIINFLibrarySkeleton stubAdmin = new ETSIINFLibrarySkeleton();
+        ETSIINFLibrarySkeleton stub1 = new ETSIINFLibrarySkeleton();
+        ETSIINFLibrarySkeleton stub1_1 = new ETSIINFLibrarySkeleton();
+        ETSIINFLibrarySkeleton stub2 = new ETSIINFLibrarySkeleton();
+        ETSIINFLibrarySkeleton stub3 = new ETSIINFLibrarySkeleton();
 
         System.out.println("INICIANDO SESION ADMIN");
 
@@ -38,7 +34,7 @@ public class ETSIINFLibraryClient {
         AddUser adduser = new AddUser();
         adduser.setArgs0(new Username());
         adduser.getArgs0().setUsername("Usuario1");
-        AddUserResponseE responseAdduser = stubAdmin.addUser(adduser);
+        es.upm.etsiinf.sos.AddUserResponse responseAdduser = stubAdmin.addUser(adduser);
         Boolean exito = responseAdduser.get_return().getResponse();
         System.out.println("Creado 'Usuario1':\t" + exito);
         if(exito){
@@ -111,14 +107,4 @@ public class ETSIINFLibraryClient {
         System.out.println("Iniciado sesion 'Usuario3', "+pwd3+":\t"+responseLogin.get_return().getResponse());
     
     }
-    catch (org.apache.axis2.AxisFault e) {
-    e.printStackTrace();
-    System.out.println("AxisFault message: " + e.getMessage());
-    System.out.println("Detail: " + e.getDetail());  // Puede contener información adicional
 }
-
-
-    }
-}
-
-
