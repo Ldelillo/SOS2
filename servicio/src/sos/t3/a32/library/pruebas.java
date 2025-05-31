@@ -314,11 +314,31 @@ public class pruebas {
 
 
 
+        System.out.println("\n\nBORRANDO LIBROS");
+        
+        RemoveBook removeBook = new RemoveBook();
+        RemoveBookResponse responseRemovebook;
+
+        i = 0;
+        removeBook.setArgs0("0001");
+        while(i<3){
+            responseRemovebook = stubAdmin.removeBook(removeBook);
+            System.out.println("Borrado libro ISSN: '0001':\t" + responseRemovebook.get_return().getResponse());
+        }
+        responseRemovebook = stubAdmin.removeBook(removeBook);
+        System.out.println("Borrado libro ISSN: '0001':(false)\t" + responseRemovebook.get_return().getResponse());
+
+        removeBook.setArgs0("9999");
+        responseRemovebook = stubAdmin.removeBook(removeBook);
+        System.out.println("Borrado libro ISSN: '9999':(false)\t" + responseRemovebook.get_return().getResponse());
 
 
 
 
 
+
+
+        
 
         System.out.println("\n\nBORRANDO USUARIOS");
         DeleteUser deleteUser = new DeleteUser();

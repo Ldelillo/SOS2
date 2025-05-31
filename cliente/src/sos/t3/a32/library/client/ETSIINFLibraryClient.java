@@ -173,7 +173,7 @@ public class ETSIINFLibraryClient {
 
 
 
-        
+
         System.out.println("\n\nAÑADIENDO LIBROS");
         AddBook addBook = new AddBook();
         addBook.setArgs0(new Book());
@@ -187,11 +187,10 @@ public class ETSIINFLibraryClient {
         int i = 0;
         int j;
 
+        addBook.getArgs0().setAuthors(author1);
+        addBook.getArgs0().setISSN("0001");
+        addBook.getArgs0().setName("Libro001");
         while(i<3){
-
-            addBook.getArgs0().setAuthors(author1);
-            addBook.getArgs0().setISSN("0001");
-            addBook.getArgs0().setName("Libro001");
 
             responseAddbook = stubAdmin.addBook(addBook);
 
@@ -202,9 +201,9 @@ public class ETSIINFLibraryClient {
 
         i = 0;
         j = 2;
+        addBook.getArgs0().setAuthors(author2);
         while(i<3){
 
-            addBook.getArgs0().setAuthors(author2);
             addBook.getArgs0().setISSN("000" + j);
             addBook.getArgs0().setName("Libro00" + j);
 
@@ -244,7 +243,7 @@ public class ETSIINFLibraryClient {
         System.out.println("\n\n OBTENIENDO LIBROS INDIVIDUALES");
 
         GetBook getbook = new GetBook();
-        GetBookResponse responseGetbook = new GetBookResponse();
+        GetBookResponse responseGetbook;
         i = 0;
 
         while(i<=j+1){
@@ -304,11 +303,22 @@ public class ETSIINFLibraryClient {
 
 
         System.out.println("\n\nBORRANDO LIBROS");
+        
+        RemoveBook removeBook = new RemoveBook();
+        RemoveBookResponse responseRemovebook;
 
+        i = 0;
+        removeBook.setArgs0("0001");
+        while(i<3){
+            responseRemovebook = stubAdmin.removeBook(removeBook);
+            System.out.println("Borrado libro ISSN: '0001':\t" + responseRemovebook.get_return().getResponse());
+        }
+        responseRemovebook = stubAdmin.removeBook(removeBook);
+        System.out.println("Borrado libro ISSN: '0001':(false)\t" + responseRemovebook.get_return().getResponse());
 
-
-
-
+        removeBook.setArgs0("9999");
+        responseRemovebook = stubAdmin.removeBook(removeBook);
+        System.out.println("Borrado libro ISSN: '9999':(false)\t" + responseRemovebook.get_return().getResponse());
 
 
 
