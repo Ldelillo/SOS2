@@ -73,6 +73,9 @@ public class ETSIINFLibraryClient {
         responseAdduser = stubAdmin.addUser(adduser);
         System.out.println("Intentando crear usuario 'Usuario1' (false):\t" + responseAdduser.get_return().getResponse());
 
+       
+
+
 
 
         System.out.println("\n\nINICIANDO SESIONES");
@@ -209,7 +212,7 @@ public class ETSIINFLibraryClient {
 
             responseAddbook = stubAdmin.addBook(addBook);
 
-            System.out.println("Añadiendo ejemplar "+ (i+1) +" de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + author2 + ":\t" + responseAddbook.get_return().getResponse());
+            System.out.println("Añadiendo ejemplar "+ (i+1) +" de 'Libro00"+ j +"'', ISSN = 000"+ j +", autores = " + author2 + ":\t" + responseAddbook.get_return().getResponse());
 
             i++;
             j++;
@@ -223,7 +226,7 @@ public class ETSIINFLibraryClient {
 
         responseAddbook = stubAdmin.addBook(addBook);
 
-        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + author3 + ":\t" + responseAddbook.get_return().getResponse());
+        System.out.println("Añadiendo ejemplar 1 de 'Libro00"+ j +"'', ISSN = 000"+ j +", autores = " + author3 + ":\t" + responseAddbook.get_return().getResponse());
 
 
         addBook.getArgs0().setAuthors(authors);
@@ -233,7 +236,9 @@ public class ETSIINFLibraryClient {
 
         responseAddbook = stubAdmin.addBook(addBook);
 
-        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + authors + ":\t" + responseAddbook.get_return().getResponse());
+        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +"'', ISSN = 000"+ j +", autores = " + authors + ":\t" + responseAddbook.get_return().getResponse());
+
+
 
 
 
@@ -296,6 +301,53 @@ public class ETSIINFLibraryClient {
 
         System.out.println("\n\nCOMPROBANDO PERMISOS DE ADMIN");
 
+        adduser.getArgs0().setUsername("Usuario99");
+        responseAdduser = stub2.addUser(adduser);
+        System.out.println("Intentando crear usuario 'Usuario99' desde usuario no admin (false):\t" + responseAdduser.get_return().getResponse());
+
+        responseAdduser = stub2.addUser(adduser);
+        System.out.println("Creado usuario 'Usuario99' desde instancia admin:\t" + responseAdduser.get_return().getResponse());
+
+        DeleteUser deleteUser = new DeleteUser();
+        deleteUser.setArgs0(new Username());
+        DeleteUserResponse responseDeleteuser;
+
+        deleteUser.getArgs0().setUsername("Usuario99");
+        responseDeleteuser = stub2.deleteUser(deleteUser);
+        System.out.println("Intentando borrar 'Usuario99' desde usuario no admin (false):\t" + responseDeleteuser.get_return().getResponse());
+
+        responseDeleteuser = stubAdmin.deleteUser(deleteUser);
+        System.out.println("Intentando borrar 'Usuario99' desde usuario admin :\t" + responseDeleteuser.get_return().getResponse());
+
+
+
+        addBook.getArgs0().setAuthors(author1);
+        addBook.getArgs0().setISSN("0999");
+        addBook.getArgs0().setName("Libro999");
+
+        responseAddbook = stub2.addBook(addBook);
+        System.out.println("Intentando añadir ejemplar de 'Libro999', ISSN = 0999, autores = " + author1 + ", (no admin) (false):\t" + responseAddbook.get_return().getResponse());
+
+        responseAddbook = stubAdmin.addBook(addBook);
+        System.out.println("Intentando añadir ejemplar de 'Libro999', ISSN = 0999, autores = " + author1 + ", (admin):\t" + responseAddbook.get_return().getResponse());
+
+
+        RemoveBook removeBook = new RemoveBook();
+        RemoveBookResponse responseRemovebook;
+
+        removeBook.setArgs0("0999");
+        responseRemovebook = stub2.removeBook(removeBook);
+        System.out.println("Intentando borrar libro de ISSN: '0999' desde usuario no admin:(false)\t" + responseRemovebook.get_return().getResponse());
+
+        responseRemovebook = stubAdmin.removeBook(removeBook);
+        System.out.println("Intentando borrar libro de ISSN: '0999' desde usuario admin:\t" + responseRemovebook.get_return().getResponse());
+
+
+
+
+
+
+
 
 
 
@@ -303,9 +355,8 @@ public class ETSIINFLibraryClient {
 
 
         System.out.println("\n\nBORRANDO LIBROS");
+
         
-        RemoveBook removeBook = new RemoveBook();
-        RemoveBookResponse responseRemovebook;
 
         i = 0;
         removeBook.setArgs0("0001");
@@ -332,28 +383,23 @@ public class ETSIINFLibraryClient {
 
 
         System.out.println("\n\nBORRANDO USUARIOS");
-        DeleteUser deleteUser = new DeleteUser();
-        deleteUser.setArgs0(new Username());
+        
         deleteUser.getArgs0().setUsername("Usuario1");
-        DeleteUserResponse responseDeleteuser = stubAdmin.deleteUser(deleteUser);
+        responseDeleteuser = stubAdmin.deleteUser(deleteUser);
         System.out.println("Borrando 'Usuario1':\t" + responseDeleteuser.get_return().getResponse());
 
-        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("Usuario2");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
         System.out.println("Borrando 'Usuario2':\t" + responseDeleteuser.get_return().getResponse());
 
-        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("Usuario3");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
         System.out.println("Borrando 'Usuario3':\t" + responseDeleteuser.get_return().getResponse());
 
-        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("Usuario3");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
         System.out.println("Borrando 'Usuario3' (false):\t" + responseDeleteuser.get_return().getResponse());
 
-        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("admin");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
         System.out.println("Borrando 'admin'(false):\t" + responseDeleteuser.get_return().getResponse());
