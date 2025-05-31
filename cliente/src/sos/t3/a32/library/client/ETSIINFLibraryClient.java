@@ -265,7 +265,45 @@ public class ETSIINFLibraryClient {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
         System.out.println("\n\nOBTENIENDO LISTAS DE LIBROS");
+
+        ListBooks listbooks = new ListBooks();
+        ListBooksResponse responselistbooks = stub2.listBooks(listbooks);
+        if(responselistbooks.get_return().getResult()){
+            String[] nombres = responselistbooks.get_return().getBookNames();
+            String[] issns = responselistbooks.get_return().getIssns();
+            j = responselistbooks.get_return().getBookNames().length;
+            i = 0;
+            while(i<j){
+                System.out.println(nombres[i] + "\t" + issns[j]);
+                i++;
+            }         
+        }
+        else{
+            System.out.println("Error sesion no iniciada");
+        }
+
+        responselistbooks = stub1.listBooks(listbooks);
+        System.out.println("Intentando pedir lista de libros sin iniciar sesion(false):\t" + responselistbooks.get_return().getResult());
+
+
+
+
+
+
+
+
 
 
 
@@ -273,8 +311,33 @@ public class ETSIINFLibraryClient {
 
 
         System.out.println("\n\nOBTENIENDO LIBROS DE AUTORES");
-
+        GetBooksFromAuthor getBooksFromAuthor = new GetBooksFromAuthor();
+        getBooksFromAuthor.setArgs0(new Author());
+        getBooksFromAuthor.getArgs0().setName(author1[0]);
+        GetBooksFromAuthorResponse responsebooksfromauthor = stub2.getBooksFromAuthor(getBooksFromAuthor);
         
+        if(responsebooksfromauthor.get_return().getResult()){
+            String[] nombres = responsebooksfromauthor.get_return().getBookNames();
+            String[] issns = responsebooksfromauthor.get_return().getIssns();
+            j = responsebooksfromauthor.get_return().getBookNames().length;
+            i = 0;
+            while(i<j){
+                System.out.println(nombres[i] + "\t" + issns[j]);
+                i++;
+            }      
+        }
+        else{
+            System.out.println("Error sesion no iniciada");
+        }
+        responsebooksfromauthor = stub1.getBooksFromAuthor(getBooksFromAuthor);
+        System.out.println("Intentando pedir lista de libros sin iniciar sesion(false):\t" + responsebooksfromauthor.get_return().getResult());
+
+
+
+
+
+
+
 
 
 
