@@ -1,6 +1,5 @@
 package sos.t3.a32.library;
 
-import es.upm.etsiinf.sos.model.xsd.User;
 import sos.t3.a32.library.ETSIINFLibrarySkeleton .*;
 import es.upm.etsiinf.sos.*;
 import es.upm.etsiinf.sos.model.xsd.*;
@@ -106,5 +105,33 @@ public class pruebas {
         responseLogin = stub3.login(login);
         System.out.println("Iniciado sesion 'Usuario3', "+pwd3+":\t"+responseLogin.get_return().getResponse());
     
+
+
+        System.out.println("\n\nBORRANDO USUARIOS");
+        DeleteUser deleteUser = new DeleteUser();
+        deleteUser.setArgs0(new Username());
+        deleteUser.getArgs0().setUsername("Usuario1");
+        DeleteUserResponse responseDeleteuser = stubAdmin.deleteUser(deleteUser);
+        System.out.println("Borrando 'Usuario1':\t" + responseDeleteuser.get_return().getResponse());
+
+        deleteUser.setArgs0(new Username());
+        deleteUser.getArgs0().setUsername("Usuario2");
+        responseDeleteuser = stubAdmin.deleteUser(deleteUser);
+        System.out.println("Borrando 'Usuario2':\t" + responseDeleteuser.get_return().getResponse());
+
+        deleteUser.setArgs0(new Username());
+        deleteUser.getArgs0().setUsername("Usuario3");
+        responseDeleteuser = stubAdmin.deleteUser(deleteUser);
+        System.out.println("Borrando 'Usuario3':\t" + responseDeleteuser.get_return().getResponse());
+
+        deleteUser.setArgs0(new Username());
+        deleteUser.getArgs0().setUsername("Usuario3");
+        responseDeleteuser = stubAdmin.deleteUser(deleteUser);
+        System.out.println("Borrando 'Usuario3' (false):\t" + responseDeleteuser.get_return().getResponse());
+
+        deleteUser.setArgs0(new Username());
+        deleteUser.getArgs0().setUsername("admin");
+        responseDeleteuser = stubAdmin.deleteUser(deleteUser);
+        System.out.println("Borrando 'admin'(false):\t" + responseDeleteuser.get_return().getResponse());
     }
 }
