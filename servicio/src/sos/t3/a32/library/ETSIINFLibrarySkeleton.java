@@ -233,6 +233,7 @@ public class ETSIINFLibrarySkeleton {
      */
 
     public es.upm.etsiinf.sos.GetBookResponse getBook(es.upm.etsiinf.sos.GetBook getBook) {
+        try{
         GetBookResponse response = new GetBookResponse();
         Book response2 = null;
         if(loged && books.containsKey(getBook.getArgs0())){
@@ -240,6 +241,13 @@ public class ETSIINFLibrarySkeleton {
         }
         response.set_return(response2);
         return response;
+    }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            return null;
+        }
     }
 
     /**
@@ -421,11 +429,12 @@ public class ETSIINFLibrarySkeleton {
      * @return getBooksFromAuthorResponse
      */
 
-    public es.upm.etsiinf.sos.GetBooksFromAuthorResponse getBooksFromAuthor(
-            es.upm.etsiinf.sos.GetBooksFromAuthor getBooksFromAuthor) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement " + this.getClass().getName() + "#getBooksFromAuthor");
+    public es.upm.etsiinf.sos.GetBooksFromAuthorResponse getBooksFromAuthor(es.upm.etsiinf.sos.GetBooksFromAuthor getBooksFromAuthor) {
+        GetBooksFromAuthorResponse response = new GetBooksFromAuthorResponse();
+        BookList response2 = new BookList();
+
+        response.set_return(response2);
+        return response;
     }
 
     /**
