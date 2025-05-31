@@ -286,7 +286,7 @@ public class ETSIINFLibraryClient {
             j = responselistbooks.get_return().getBookNames().length;
             i = 0;
             while(i<j){
-                System.out.println(nombres[i] + "\t" + issns[j]);
+                System.out.println(nombres[i] + "\t" + issns[i]);
                 i++;
             }         
         }
@@ -322,7 +322,7 @@ public class ETSIINFLibraryClient {
             j = responsebooksfromauthor.get_return().getBookNames().length;
             i = 0;
             while(i<j){
-                System.out.println(nombres[i] + "\t" + issns[j]);
+                System.out.println(nombres[i] + "\t" + issns[i]);
                 i++;
             }      
         }
@@ -342,9 +342,35 @@ public class ETSIINFLibraryClient {
 
 
         System.out.println("\n\nPRESTANDO LIBROS");
+        BorrowBook borrowBook = new BorrowBook();
+        BorrowBookResponse responseborrowbook;
+
+        borrowBook.setArgs0("0001");
+        responseborrowbook = stub1.borrowBook(borrowBook);
+        System.out.println("Intentando pedir prestado sin iniciar sesion (false):\t");
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -426,6 +452,7 @@ public class ETSIINFLibraryClient {
         while(i<3){
             responseRemovebook = stubAdmin.removeBook(removeBook);
             System.out.println("Borrado libro ISSN: '0001':\t" + responseRemovebook.get_return().getResponse());
+            i++;
         }
         responseRemovebook = stubAdmin.removeBook(removeBook);
         System.out.println("Borrado libro ISSN: '0001':(false)\t" + responseRemovebook.get_return().getResponse());

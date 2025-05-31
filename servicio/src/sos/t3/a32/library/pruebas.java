@@ -305,7 +305,7 @@ public class pruebas {
             j = responselistbooks.get_return().getBookNames().length;
             i = 0;
             while(i<j){
-                System.out.println(nombres[i] + "\t" + issns[j]);
+                System.out.println(nombres[i] + "\t" + issns[i]);
                 i++;
             }         
         }
@@ -341,7 +341,7 @@ public class pruebas {
             j = responsebooksfromauthor.get_return().getBookNames().length;
             i = 0;
             while(i<j){
-                System.out.println(nombres[i] + "\t" + issns[j]);
+                System.out.println(nombres[i] + "\t" + issns[i]);
                 i++;
             }      
         }
@@ -425,6 +425,7 @@ System.out.println("\n\nCOMPROBANDO PERMISOS DE ADMIN");
         while(i<3){
             responseRemovebook = stubAdmin.removeBook(removeBook);
             System.out.println("Borrado libro ISSN: '0001':\t" + responseRemovebook.get_return().getResponse());
+            i++;
         }
         responseRemovebook = stubAdmin.removeBook(removeBook);
         System.out.println("Borrado libro ISSN: '0001':(false)\t" + responseRemovebook.get_return().getResponse());
