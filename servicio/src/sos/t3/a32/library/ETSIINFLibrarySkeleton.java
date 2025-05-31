@@ -8,7 +8,9 @@
 package sos.t3.a32.library;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.axis2.AxisFault;
 import org.apache.regexp.recompile;
@@ -28,6 +30,17 @@ public class ETSIINFLibrarySkeleton {
 
     private static User admin;
 
+    private class Libros{
+        private Book libro;
+        private int cantidad;
+        public Libros(Book newLibro){
+            libro = newLibro;
+            cantidad = 1;
+        }
+    }
+
+    private static Map<String,Libros> books;
+
     private boolean loged;
     private String userNameLogged;
 
@@ -43,6 +56,8 @@ public class ETSIINFLibrarySkeleton {
         }
         if (userslogged==null)
             userslogged = new ArrayList<String>();
+        if (books == null)
+            books = new HashMap<>();
     }
 
     /**
@@ -337,8 +352,33 @@ public class ETSIINFLibrarySkeleton {
      */
 
     public es.upm.etsiinf.sos.AddBookResponse addBook(es.upm.etsiinf.sos.AddBook addBook) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#addBook");
+        AddBookResponse response = new AddBookResponse();
+        Response response2 = new Response();
+        if(userNameLogged.equals("admin")){ 
+            boolean aux = true;
+            Book newBook = new Book();
+            if(aux && addBook.getArgs0().getAuthors()== null)  aux = false;
+                else newBook.setAuthors(addBook.getArgs0().getAuthors());
+            if(aux && addBook.getArgs0().getISSN()== null)  aux = false;
+                else newBook.setISSN(addBook.getArgs0().getISSN());
+            if(aux && addBook.getArgs0().getAuthors()== null)  aux = false;
+                else newBook.setName(addBook.getArgs0().getName());
+            if(aux){
+                if(books.containsKey(newBook.getISSN())){
+                    books.get(newBook.getISSN()).cantidad++;
+                }
+                else{
+                    books.put(newBook.getISSN(), new Libros(newBook));
+                }
+
+            }
+            response2.setResponse(aux);
+        }
+        else{
+            response2.setResponse(false);
+        }
+        response.set_return(response2);
+        return response;
     }
 
     /**
