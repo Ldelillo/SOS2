@@ -1,6 +1,8 @@
 package sos.t3.a32.library.client;
 
 import java.rmi.RemoteException;
+import java.util.Arrays;
+
 import org.apache.axis2.AxisFault;
 
 
@@ -245,24 +247,18 @@ public class ETSIINFLibraryClient {
 
 
 
-        System.out.println("\n\n OBTENIENDO LIBROS INDIVIDUALES");
+       System.out.println("\n\n OBTENIENDO LIBROS INDIVIDUALES");
 
         GetBook getbook = new GetBook();
-        GetBookResponse responseGetbook;
-        i = 0;
-
-        while(i<=j+1){
+        GetBookResponse responseGetbook = new GetBookResponse();
+        i = 1;
+        while(i<=j){
             getbook.setArgs0("000" + i);
-            responseGetbook = stub2.getBook(getbook);
-        
-            if(i<=j){
-                System.out.println(responseGetbook.get_return().getName() + ":\nISSN:\t" + responseGetbook.get_return().getISSN()+ "\nAutores:\t" + responseGetbook.get_return().getAuthors());
-            }
-            else{
-                System.out.println("Se espera que pete o sea null: "+responseGetbook.get_return().getName() + "\t" + responseGetbook.get_return().getISSN()+ "\t" + responseGetbook.get_return().getAuthors());
-            }
+            responseGetbook = stubAdmin.getBook(getbook);
+            System.out.println(responseGetbook.get_return().getName() + ":\nISSN:\t" + responseGetbook.get_return().getISSN()+
+            "\nAutores:\t" + Arrays.toString(responseGetbook.get_return().getAuthors()));
+            i++;
         }
-
 
 
 
@@ -296,8 +292,6 @@ public class ETSIINFLibraryClient {
 
         responselistbooks = stub1.listBooks(listbooks);
         System.out.println("Intentando pedir lista de libros sin iniciar sesion(false):\t" + responselistbooks.get_return().getResult());
-
-
 
 
 
@@ -347,25 +341,32 @@ public class ETSIINFLibraryClient {
 
         borrowBook.setArgs0("0001");
         responseborrowbook = stub1.borrowBook(borrowBook);
-        System.out.println("Intentando pedir prestado sin iniciar sesion (false):\t");
+        System.out.println("Intentando pedir prestado sin iniciar sesion (false):\t" + responseborrowbook.get_return().getResponse());
+
+        responseborrowbook = stub2.borrowBook(borrowBook);
+        System.out.println("Prestado libro ISSN: '0001':\t" + responseborrowbook.get_return().getResponse());
+
+        responseborrowbook = stub2.borrowBook(borrowBook);
+        System.out.println("Intentando pedir prestado libro ISSN: '0001' de nuevo extistiendo mas ejemplares (false):\t" + responseborrowbook.get_return().getResponse());
 
 
+        borrowBook.setArgs0("0002");
+        responseborrowbook = stub2.borrowBook(borrowBook);
+        System.out.println("Prestado libro ISSN: '0002':\t" + responseborrowbook.get_return().getResponse());
 
+        responseborrowbook = stub2.borrowBook(borrowBook);
+        System.out.println("Intentando pedir prestado libro ISSN: '0002' de nuevo sin existir mas ejemplares (false):\t" + responseborrowbook.get_return().getResponse());
 
+        responseborrowbook = stub3.borrowBook(borrowBook);
+        System.out.println("Intentando pedir prestado libro ISSN: '0002' de nuevo sin existir mas ejemplares desde otra instancia(false):\t" + responseborrowbook.get_return().getResponse());
 
+        borrowBook.setArgs0("0003");
+        responseborrowbook = stub2.borrowBook(borrowBook);
+        System.out.println("Prestado libro ISSN: '0003':\t" + responseborrowbook.get_return().getResponse());
 
-
-
-
-
-
-
-
-
-
-
-
-
+        borrowBook.setArgs0("9999");
+        responseborrowbook = stub2.borrowBook(borrowBook);
+        System.out.println("Intentando pedir prestado libro ISSN: '9999' de nuevo sin existir el libro (false):\t" + responseborrowbook.get_return().getResponse());
 
 
 
@@ -375,13 +376,74 @@ public class ETSIINFLibraryClient {
 
 
         System.out.println("\n\nOBTENIENDO LISTAS DE LIBROS PRESTADOS");
+        ListBorrowedBooks listBorrowedBooks = new ListBorrowedBooks();
+        ListBorrowedBooksResponse responselListBorrowedBooks;
 
+        responselListBorrowedBooks = stub1.listBorrowedBooks(listBorrowedBooks);
+        System.out.println("Intentando pedir lista de libros prestados sin iniciar sesion (false):\t" + responselListBorrowedBooks.get_return().getResult());
 
-
-
+        responselListBorrowedBooks = stub3.listBorrowedBooks(listBorrowedBooks);
+        System.out.println("Intentando pedir lista de libros prestados sin tener libros prestados:\t" + responselListBorrowedBooks.get_return().getResult());
+        
+        if(responselListBorrowedBooks.get_return().getResult()){
+            String[] names = responselListBorrowedBooks.get_return().getBookNames();
+            String[] issns = responselListBorrowedBooks.get_return().getIssns();
+            i = 0;
+            j = responselListBorrowedBooks.get_return().getBookNames().length;
+            while(i<j){
+            System.out.println(names[i] + "\t" + issns[i]);
+            i++;
+        }
+        }
+        
+        responselListBorrowedBooks = stub1.listBorrowedBooks(listBorrowedBooks);
+        System.out.println("Pidiendo lista de libros prestados:\t" + responselListBorrowedBooks.get_return().getResult());
+        
+        if(responselListBorrowedBooks.get_return().getResult()){
+            String[] names = responselListBorrowedBooks.get_return().getBookNames();
+            String[] issns = responselListBorrowedBooks.get_return().getIssns();
+            i = 0;
+            j = responselListBorrowedBooks.get_return().getBookNames().length;
+            while(i<j){
+            System.out.println(names[i] + "\t" + issns[i]);
+            i++;
+        }
+        }
+        
+        
 
 
         System.out.println("\n\nDEVOLVIENDO LIBROS");
+        ReturnBook returnBook = new ReturnBook();
+        ReturnBookResponse responseReturnBook;
+
+        returnBook.setArgs0("0005");
+        responseReturnBook = stub1.returnBook(returnBook);
+        System.out.println("Intentando devolver libro sin iniciar sesion (false):\t" + responseReturnBook.get_return().getResponse());
+
+        responseReturnBook = stub3.returnBook(returnBook);
+        System.out.println("Intentando devolver libro que no tiene prestado (false):\t" + responseReturnBook.get_return().getResponse());
+
+        returnBook.setArgs0("0002");
+        responseReturnBook = stub2.returnBook(returnBook);
+        System.out.println("Devuelto libro ISSN '0002':\t" + responseReturnBook.get_return().getResponse());
+
+        returnBook.setArgs0("0002");
+        responseReturnBook = stub1.returnBook(returnBook);
+        System.out.println("Intentando devolver libro ISSN '0002' de nuevo (false):\t" + responseReturnBook.get_return().getResponse());
+
+
+        returnBook.setArgs0("0001");
+        responseReturnBook = stub2.returnBook(returnBook);
+        System.out.println("Devuelto libro ISSN '0001':\t" + responseReturnBook.get_return().getResponse());
+
+
+
+
+
+
+
+
 
 
 
