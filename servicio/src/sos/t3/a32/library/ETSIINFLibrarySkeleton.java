@@ -13,7 +13,6 @@ import java.util.List;
 import org.apache.axis2.AxisFault;
 
 import es.upm.etsiinf.sos.*;
-import es.upm.etsiinf.sos.AddUserResponse;
 import es.upm.etsiinf.sos.auth.*;
 import es.upm.etsiinf.sos.auth.UPMAuthenticationAuthorizationWSSkeletonStub.*;
 import es.upm.etsiinf.sos.model.xsd.*;
@@ -35,12 +34,12 @@ public class ETSIINFLibrarySkeleton {
      */
     public ETSIINFLibrarySkeleton() {
         loged = false;
-        if (admin.equals(null)) {
+        if (admin==null) {
             admin = new User();
             admin.setName("admin");
             admin.setPwd("admin");
         }
-        if (userslogged.equals(null))
+        if (userslogged==null)
             userslogged = new ArrayList<String>();
     }
 
@@ -105,11 +104,10 @@ public class ETSIINFLibrarySkeleton {
      * @return deleteUserResponse
      */
 
-    public es.upm.etsiinf.sos.DeleteUserResponse deleteUser(
-            es.upm.etsiinf.sos.DeleteUser deleteUser) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement " + this.getClass().getName() + "#deleteUser");
+    public es.upm.etsiinf.sos.DeleteUserResponse deleteUser(es.upm.etsiinf.sos.DeleteUser deleteUser) {
+        DeleteUserResponse response = new DeleteUserResponse();
+
+        return null;
     }
 
     /**
@@ -120,9 +118,9 @@ public class ETSIINFLibrarySkeleton {
      */
 
     public es.upm.etsiinf.sos.AddUserResponse addUser(es.upm.etsiinf.sos.AddUser addUser) {
-        AddUserResponse response = new AddUserResponse();
+        es.upm.etsiinf.sos.AddUserResponse response = new es.upm.etsiinf.sos.AddUserResponse();
         es.upm.etsiinf.sos.model.xsd.AddUserResponse response4 = new es.upm.etsiinf.sos.model.xsd.AddUserResponse();
-        if(userNameLogged.equals(admin.getName())){
+        if(userNameLogged.equals(admin.getName()) && addUser.getArgs0().getUsername() != "admin"){
             try {
                 UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
 
