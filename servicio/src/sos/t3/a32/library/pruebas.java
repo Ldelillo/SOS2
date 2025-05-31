@@ -1,5 +1,7 @@
 package sos.t3.a32.library;
 
+import java.util.Arrays;
+
 import es.upm.etsiinf.sos.*;
 import es.upm.etsiinf.sos.model.xsd.*;
 
@@ -223,7 +225,7 @@ public class pruebas {
 
             responseAddbook = stubAdmin.addBook(addBook);
 
-            System.out.println("Añadiendo ejemplar "+ (i+1) +" de 'Libro001', ISSN = 0001, autores = " + author1 + ":\t" + responseAddbook.get_return().getResponse());
+            System.out.println("Añadiendo ejemplar "+ (i+1) +" de 'Libro001', ISSN = 0001, autores = " + Arrays.toString(author1) + ":\t" + responseAddbook.get_return().getResponse());
 
             i++;
         }
@@ -238,7 +240,7 @@ public class pruebas {
 
             responseAddbook = stubAdmin.addBook(addBook);
 
-            System.out.println("Añadiendo ejemplar "+ (i+1) +" de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + author2 + ":\t" + responseAddbook.get_return().getResponse());
+            System.out.println("Añadiendo ejemplar "+ (i+1) +" de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + Arrays.toString(author2) + ":\t" + responseAddbook.get_return().getResponse());
 
             i++;
             j++;
@@ -252,7 +254,7 @@ public class pruebas {
 
         responseAddbook = stubAdmin.addBook(addBook);
 
-        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + author3 + ":\t" + responseAddbook.get_return().getResponse());
+        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + Arrays.toString(author3) + ":\t" + responseAddbook.get_return().getResponse());
 
 
         addBook.getArgs0().setAuthors(authors);
@@ -262,7 +264,7 @@ public class pruebas {
 
         responseAddbook = stubAdmin.addBook(addBook);
 
-        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + authors + ":\t" + responseAddbook.get_return().getResponse());
+        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + Arrays.toString(authors) + ":\t" + responseAddbook.get_return().getResponse());
 
 
 
@@ -281,20 +283,14 @@ public class pruebas {
 
         GetBook getbook = new GetBook();
         GetBookResponse responseGetbook = new GetBookResponse();
-        i = 0;
-
-        while(i<=j+1){
+        i = 1;
+        while(i<=j){
             getbook.setArgs0("000" + i);
-            responseGetbook = stub2.getBook(getbook);
-        
-            if(i<=j){
-                System.out.println(responseGetbook.get_return().getName() + ":\nISSN:\t" + responseGetbook.get_return().getISSN()+ "\nAutores:\t" + responseGetbook.get_return().getAuthors());
-            }
-            else{
-                System.out.println("Se espera que pete o sea null: "+responseGetbook.get_return().getName() + "\t" + responseGetbook.get_return().getISSN()+ "\t" + responseGetbook.get_return().getAuthors());
-            }
+            responseGetbook = stubAdmin.getBook(getbook);
+            System.out.println(responseGetbook.get_return().getName() + ":\nISSN:\t" + responseGetbook.get_return().getISSN()+
+            "\nAutores:\t" + Arrays.toString(responseGetbook.get_return().getAuthors()));
+            i++;
         }
-
 
 
 

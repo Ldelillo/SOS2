@@ -234,7 +234,7 @@ public class ETSIINFLibrarySkeleton {
 
     public es.upm.etsiinf.sos.GetBookResponse getBook(es.upm.etsiinf.sos.GetBook getBook) {
         GetBookResponse response = new GetBookResponse();
-        Book response2 = null;
+        Book response2 = new Book();
         if(loged && books.containsKey(getBook.getArgs0())){
             response2 = books.get(getBook.getArgs0()).libro;
         }
