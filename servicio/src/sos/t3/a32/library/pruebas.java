@@ -1,6 +1,5 @@
 package sos.t3.a32.library;
 
-import sos.t3.a32.library.ETSIINFLibrarySkeleton .*;
 import es.upm.etsiinf.sos.*;
 import es.upm.etsiinf.sos.model.xsd.*;
 
@@ -97,7 +96,7 @@ public class pruebas {
 
         login.getArgs0().setName("Usuario2");
         login.getArgs0().setPwd(pwd2);
-        responseLogin = stub1.login(login);
+        responseLogin = stub2.login(login);
         System.out.println("Iniciado sesion 'Usuario2', "+pwd2+":\t"+responseLogin.get_return().getResponse());
 
         login.getArgs0().setName("Usuario3");
