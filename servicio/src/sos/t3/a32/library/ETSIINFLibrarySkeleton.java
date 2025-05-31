@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.axis2.AxisFault;
+import org.apache.regexp.recompile;
 
 import es.upm.etsiinf.sos.*;
+import es.upm.etsiinf.sos.ChangePasswordResponse;
 import es.upm.etsiinf.sos.auth.*;
 import es.upm.etsiinf.sos.auth.UPMAuthenticationAuthorizationWSSkeletonStub.*;
 import es.upm.etsiinf.sos.model.xsd.*;
@@ -77,10 +79,27 @@ public class ETSIINFLibrarySkeleton {
      * @return logoutResponse
      */
 
-    public es.upm.etsiinf.sos.LogoutResponse logout(
-            es.upm.etsiinf.sos.Logout logout) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#logout");
+    public es.upm.etsiinf.sos.LogoutResponse logout(es.upm.etsiinf.sos.Logout logout) {
+        LogoutResponse response = new LogoutResponse();
+        Response response2 = new Response();
+        if(!loged){
+            response2.setResponse(loged);
+        }
+        else if(userNameLogged.equals("admin")){
+            response2.setResponse(loged);
+            userslogged.remove(userNameLogged);
+            userNameLogged = null;
+            loged = false;
+        }
+        else{
+            response2.setResponse(loged);
+            userslogged.remove(userNameLogged);
+            userNameLogged = null;
+            loged = false;
+        }
+
+        response.set_return(response2);
+        return response;
     }
 
     /**
@@ -206,11 +225,46 @@ public class ETSIINFLibrarySkeleton {
      * @return changePasswordResponse
      */
 
-    public es.upm.etsiinf.sos.ChangePasswordResponse changePassword(
-            es.upm.etsiinf.sos.ChangePassword changePassword) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement " + this.getClass().getName() + "#changePassword");
+    public es.upm.etsiinf.sos.ChangePasswordResponse changePassword(es.upm.etsiinf.sos.ChangePassword changePassword) {
+        ChangePasswordResponse response = new ChangePasswordResponse();
+        Response response4 = new Response();
+        if(loged){
+            if(userNameLogged.equals("admin")){
+                if(changePassword.getArgs0().getOldpwd().equals(admin.getPwd())){
+                    admin.setPwd(changePassword.getArgs0().getNewpwd());
+                    response4.setResponse(true);
+                }
+                else{
+                    response4.setResponse(false);
+                }
+            }
+            else{
+                try {
+                    UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+                    UPMAuthenticationAuthorizationWSSkeletonStub.ChangePassword changePassword2 = new 
+                    UPMAuthenticationAuthorizationWSSkeletonStub.ChangePassword();
+
+                    ChangePasswordBackEnd changePassword3 = new ChangePasswordBackEnd();
+                    changePassword3.setName(userNameLogged);
+                    changePassword3.setOldpwd(changePassword.getArgs0().getOldpwd());
+                    changePassword3.setNewpwd(changePassword.getArgs0().getNewpwd());
+                    changePassword2.setChangePassword(changePassword3);
+
+                    ChangePasswordResponseE responseE = stub.changePassword(changePassword2);
+                    response4.setResponse(responseE.get_return().getResult());
+                    
+                } catch (Exception e) {
+                    // TODO: ERRORES??
+                    e.printStackTrace();
+                }
+
+            }
+        }
+        else{
+            response4.setResponse(false);
+        }
+        response.set_return(response4);
+        return response;
     }
 
     /**
@@ -237,8 +291,10 @@ public class ETSIINFLibrarySkeleton {
                 userNameLogged = login.getArgs0().getName();
                 userslogged.add(userNameLogged);
                 entradaRep.setResponse(true);
+                loged = true;
             } else {
                 entradaRep.setResponse(false);
+                loged = false;
             }
             response.set_return(entradaRep);
             return response;
