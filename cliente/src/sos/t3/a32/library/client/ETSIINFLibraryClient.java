@@ -151,23 +151,22 @@ public class ETSIINFLibraryClient {
         changePassword.getArgs0().setNewpwd("patata");
         changePassword.getArgs0().setOldpwd(pwd2);
         ChangePasswordResponse responseChangepwd = stub2.changePassword(changePassword);
-        System.out.println("Cambiando pwd de 'User2' de:\t"+ pwd2 + "\ta\t'patata':\t" + responseChangepwd.get_return().getResponse());
+        System.out.println("Cambiando pwd de 'User2' de: "+ pwd2 + "a 'patata':\t" + responseChangepwd.get_return().getResponse());
 
         
         responseChangepwd = stub3.changePassword(changePassword);
-        System.out.println("Cambiando pwd de 'User3' de:\t"+ pwd2 + "\ta\t'patata' (false)\t:" + responseChangepwd.get_return().getResponse());
+        System.out.println("Cambiando pwd de 'User3' de: "+ pwd2 + "a 'patata' (false):\t" + responseChangepwd.get_return().getResponse());
 
         responseLogout = stub2.logout(logout);
-        System.out.println("Cierre seison 'Usuario2':" + responseLogout.get_return().getResponse());
+        System.out.println("Cierre seison 'Usuario2':\t" + responseLogout.get_return().getResponse());
         login.getArgs0().setName("Usuario2");
         login.getArgs0().setPwd("patata");
         responseLogin = stub2.login(login);
-        System.out.println("Iniciado sesion 'Usuario2' con nueva contraseña 'patata'\t" + responseLogin.get_return().getResponse());
+        System.out.println("Iniciado sesion 'Usuario2' con nueva contraseña 'patata':\t" + responseLogin.get_return().getResponse());
 
         login.getArgs0().setPwd(pwd2);
         responseLogin = stub1.login(login);
-        System.out.println("Iniciado sesion 'Usuario2' con antigua contraseña '"+ pwd2 + "':\t" + responseLogin.get_return().getResponse());
-
+        System.out.println("Iniciado sesion 'Usuario2' con antigua contraseña '"+ pwd2 + "'(false):\t" + responseLogin.get_return().getResponse());
 
 
 
@@ -175,6 +174,153 @@ public class ETSIINFLibraryClient {
 
 
         
+        System.out.println("\n\nAÑADIENDO LIBROS");
+        AddBook addBook = new AddBook();
+        addBook.setArgs0(new Book());
+        AddBookResponse responseAddbook;
+
+        String[] authors = {"Autor1", "Autor2"};
+        String[] author1 = {"Autor1"};
+        String[] author2 = {"Author2"};
+        String[] author3 = {"Author3"};
+
+        int i = 0;
+        int j;
+
+        while(i<3){
+
+            addBook.getArgs0().setAuthors(author1);
+            addBook.getArgs0().setISSN("0001");
+            addBook.getArgs0().setName("Libro001");
+
+            responseAddbook = stubAdmin.addBook(addBook);
+
+            System.out.println("Añadiendo ejemplar "+ (i+1) +" de 'Libro001', ISSN = 0001, autores = " + author1 + ":\t" + responseAddbook.get_return().getResponse());
+
+            i++;
+        }
+
+        i = 0;
+        j = 2;
+        while(i<3){
+
+            addBook.getArgs0().setAuthors(author2);
+            addBook.getArgs0().setISSN("000" + j);
+            addBook.getArgs0().setName("Libro00" + j);
+
+            responseAddbook = stubAdmin.addBook(addBook);
+
+            System.out.println("Añadiendo ejemplar "+ (i+1) +" de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + author2 + ":\t" + responseAddbook.get_return().getResponse());
+
+            i++;
+            j++;
+        }
+
+
+        addBook.getArgs0().setAuthors(author3);
+        addBook.getArgs0().setISSN("000" + j);
+        addBook.getArgs0().setName("Libro00" + j);
+        j++;
+
+        responseAddbook = stubAdmin.addBook(addBook);
+
+        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + author3 + ":\t" + responseAddbook.get_return().getResponse());
+
+
+        addBook.getArgs0().setAuthors(authors);
+        addBook.getArgs0().setISSN("000" + j);
+        addBook.getArgs0().setName("Libro00" + j);
+        j++;
+
+        responseAddbook = stubAdmin.addBook(addBook);
+
+        System.out.println("Añadiendo ejemplar 1 de 'Libro00'"+ j +", ISSN = 000"+ j +", autores = " + authors + ":\t" + responseAddbook.get_return().getResponse());
+
+
+
+
+
+
+        System.out.println("\n\n OBTENIENDO LIBROS INDIVIDUALES");
+
+        GetBook getbook = new GetBook();
+        GetBookResponse responseGetbook = new GetBookResponse();
+        i = 0;
+
+        while(i<=j+1){
+            getbook.setArgs0("000" + i);
+            responseGetbook = stub2.getBook(getbook);
+        
+            if(i<=j){
+                System.out.println(responseGetbook.get_return().getName() + ":\nISSN:\t" + responseGetbook.get_return().getISSN()+ "\nAutores:\t" + responseGetbook.get_return().getAuthors());
+            }
+            else{
+                System.out.println("Se espera que pete o sea null: "+responseGetbook.get_return().getName() + "\t" + responseGetbook.get_return().getISSN()+ "\t" + responseGetbook.get_return().getAuthors());
+            }
+        }
+
+
+
+        System.out.println("\n\nOBTENIENDO LISTAS DE LIBROS");
+
+
+
+
+
+
+        System.out.println("\n\nOBTENIENDO LIBROS DE AUTORES");
+
+        
+
+
+
+        System.out.println("\n\nPRESTANDO LIBROS");
+
+
+        
+
+
+
+        System.out.println("\n\nOBTENIENDO LISTAS DE LIBROS PRESTADOS");
+
+
+
+
+
+
+        System.out.println("\n\nDEVOLVIENDO LIBROS");
+
+
+
+
+
+
+        System.out.println("\n\nCOMPROBANDO PERMISOS DE ADMIN");
+
+
+
+
+
+
+
+        System.out.println("\n\nBORRANDO LIBROS");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         System.out.println("\n\nBORRANDO USUARIOS");
         DeleteUser deleteUser = new DeleteUser();
         deleteUser.setArgs0(new Username());
