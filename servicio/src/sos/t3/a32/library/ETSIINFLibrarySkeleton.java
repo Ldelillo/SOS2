@@ -233,21 +233,15 @@ public class ETSIINFLibrarySkeleton {
      */
 
     public es.upm.etsiinf.sos.GetBookResponse getBook(es.upm.etsiinf.sos.GetBook getBook) {
-        try{
         GetBookResponse response = new GetBookResponse();
         Book response2 = null;
+        System.out.println(loged);
+        System.out.println(books.containsKey(getBook.getArgs0()));
         if(loged && books.containsKey(getBook.getArgs0())){
             response2 = books.get(getBook.getArgs0()).libro;
         }
         response.set_return(response2);
         return response;
-    }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-        finally {
-            return null;
-        }
     }
 
     /**
