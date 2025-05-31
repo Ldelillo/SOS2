@@ -94,7 +94,7 @@ public class ETSIINFLibrarySkeleton {
         Response response2 = new Response();
         if (loged && books.containsKey(borrowBook.getArgs0())
                 && books.get(borrowBook.getArgs0()).cantidadTotal > books.get(borrowBook.getArgs0()).cantidadPrestamo
-                && !listaPrestamos.get(userNameLogged).contains(borrowBook.getArgs0())) {
+                &&(listaPrestamos.containsKey(userNameLogged) && !listaPrestamos.get(userNameLogged).contains(borrowBook.getArgs0()))){
             books.get(borrowBook.getArgs0()).cantidadPrestamo++;
             listaPrestamos.get(userNameLogged).add(borrowBook.getArgs0());
             response2.setResponse(true);
@@ -114,7 +114,8 @@ public class ETSIINFLibrarySkeleton {
     public es.upm.etsiinf.sos.ReturnBookResponse returnBook(es.upm.etsiinf.sos.ReturnBook returnBook) {
         ReturnBookResponse response = new ReturnBookResponse();
         Response response2 = new Response();
-        if (loged && books.containsKey(returnBook.getArgs0()) && listaPrestamos.get(userNameLogged).contains(returnBook.getArgs0())) {
+        if (loged && books.containsKey(returnBook.getArgs0()) && (listaPrestamos.containsKey(userNameLogged)
+        &&listaPrestamos.get(userNameLogged).contains(returnBook.getArgs0()))) {
             books.get(returnBook.getArgs0()).cantidadPrestamo--;
             listaPrestamos.get(userNameLogged).remove(returnBook.getArgs0());
             response2.setResponse(true);
@@ -195,7 +196,8 @@ public class ETSIINFLibrarySkeleton {
         DeleteUserResponse response = new DeleteUserResponse();
         es.upm.etsiinf.sos.model.xsd.Response response3 = new es.upm.etsiinf.sos.model.xsd.Response();
         if (userNameLogged.equals(admin.getName()) && !deleteUser.getArgs0().getUsername().equals("admin") &&
-                !listaPrestamos.get(deleteUser.getArgs0().getUsername()).isEmpty()) {
+                (listaPrestamos.containsKey(deleteUser.getArgs0().getUsername()) &&
+                listaPrestamos.get(deleteUser.getArgs0().getUsername()).isEmpty())) {
             try {
                 UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
 

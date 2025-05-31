@@ -148,7 +148,7 @@ public class pruebas {
         System.out.println("Cierre sesion 'Usuario1' en otra instancia:\t" + responseLogout.get_return().getResponse());
 
         responseLogout = stub1_1.logout(logout);
-        System.out.println("Cierre sesion 'Usuario1' en la misma otra instancia:\t" + responseLogout.get_return().getResponse());
+        System.out.println("Cierre sesion 'Usuario1' en la misma otra instancia (false):\t" + responseLogout.get_return().getResponse());
 
         responseLogout = stubAdmin.logout(logout);
         System.out.println("Cierre sesion 'admin':\t" + responseLogout.get_return().getResponse());
@@ -420,6 +420,7 @@ public class pruebas {
         }
         
         responselListBorrowedBooks = stub1.listBorrowedBooks(listBorrowedBooks);
+        //TODO: mirame esto que este bien @sersayen
         System.out.println("Pidiendo lista de libros prestados:\t" + responselListBorrowedBooks.get_return().getResult());
         
         if(responselListBorrowedBooks.get_return().getResult()){
@@ -476,7 +477,7 @@ System.out.println("\n\nCOMPROBANDO PERMISOS DE ADMIN");
         responseAdduser = stub2.addUser(adduser);
         System.out.println("Intentando crear usuario 'Usuario99' desde usuario no admin (false):\t" + responseAdduser.get_return().getResponse());
 
-        responseAdduser = stub2.addUser(adduser);
+        responseAdduser = stubAdmin.addUser(adduser);
         System.out.println("Creado usuario 'Usuario99' desde instancia admin:\t" + responseAdduser.get_return().getResponse());
 
         DeleteUser deleteUser = new DeleteUser();
