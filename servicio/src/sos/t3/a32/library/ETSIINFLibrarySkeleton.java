@@ -259,8 +259,11 @@ public class ETSIINFLibrarySkeleton {
                 auxISSN.add(i.libro.getName());
                 auxNames.add(i.libro.getISSN());
             }
-            response2.setBookNames((String[])auxNames.toArray());
-            response2.setIssns((String[])auxISSN.toArray());  
+            String[]aux = new String[auxNames.size()];
+            auxNames.toArray(aux);
+            response2.setBookNames(aux);
+            auxISSN.toArray(aux);
+            response2.setIssns(aux);  
         }
         response2.setResult(loged);        
         response.set_return(response2);
