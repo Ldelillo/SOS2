@@ -107,7 +107,7 @@ public class pruebas {
 
 
 
-        
+
         System.out.println("\n\nCERRRANDO SESIONES");
 
         Logout logout = new Logout();
@@ -137,6 +137,31 @@ public class pruebas {
 
 
 
+
+        System.out.println("\n\nCAMBIANDO CONTRASEÑAS");
+
+        ChangePassword changePassword = new ChangePassword();
+
+        changePassword.setArgs0(new PasswordPair());
+        changePassword.getArgs0().setNewpwd("patata");
+        changePassword.getArgs0().setOldpwd(pwd2);
+        ChangePasswordResponse responseChangepwd = stub2.changePassword(changePassword);
+        System.out.println("Cambiando pwd de 'User2' de:\t"+ pwd2 + "\ta\t'patata':\t" + responseChangepwd.get_return().getResponse());
+
+        
+        responseChangepwd = stub3.changePassword(changePassword);
+        System.out.println("Cambiando pwd de 'User3' de:\t"+ pwd2 + "\ta\t'patata' (false)\t:" + responseChangepwd.get_return().getResponse());
+
+        responseLogout = stub2.logout(logout);
+        System.out.println("Cierre seison 'Usuario2':" + responseLogout.get_return().getResponse());
+        login.getArgs0().setName("Usuario2");
+        login.getArgs0().setPwd("patata");
+        responseLogin = stub2.login(login);
+        System.out.println("Iniciado sesion 'Usuario2' con nueva contraseña 'patata'\t" + responseLogin.get_return().getResponse());
+
+        login.getArgs0().setPwd(pwd2);
+        responseLogin = stub1.login(login);
+        System.out.println("Iniciado sesion 'Usuario2' con antigua contraseña '"+ pwd2 + "':\t" + responseLogin.get_return().getResponse());
 
 
 
