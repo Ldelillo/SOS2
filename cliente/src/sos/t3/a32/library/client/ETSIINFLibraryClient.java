@@ -532,33 +532,43 @@ public class ETSIINFLibraryClient {
 
 
 
-
-
-        System.out.println("\n\nBORRANDO USUARIOS");
-        
+ System.out.println("\n\nBORRANDO USUARIOS");
+        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("Usuario1");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
-        System.out.println("Borrando 'Usuario1':\t" + responseDeleteuser.get_return().getResponse());
+        System.out.println("Borrando 'Usuario1' con sesion cerrada:\t" + responseDeleteuser.get_return().getResponse());
 
+        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("Usuario2");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
-        System.out.println("Borrando 'Usuario2':\t" + responseDeleteuser.get_return().getResponse());
+        System.out.println("Borrando 'Usuario2' con sesion abierta y libros prestados(false):\t" + responseDeleteuser.get_return().getResponse());
 
+        returnBook.setArgs0("0003");
+        responseReturnBook = stub2.returnBook(returnBook);
+        System.out.println("Devuelto libro ISSN '0003':\t" + responseReturnBook.get_return().getResponse());
+
+        responseDeleteuser = stubAdmin.deleteUser(deleteUser);
+        System.out.println("Borrando 'Usuario2' con sesion abierta:\t" + responseDeleteuser.get_return().getResponse());
+
+        borrowBook.setArgs0("0002");
+        responseborrowbook = stub2.borrowBook(borrowBook);
+        System.out.println("Intentando pedir prestado libro ISSN: '0002 y usuario no existe (false)':\t" + responseborrowbook.get_return().getResponse());
+
+
+        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("Usuario3");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
-        System.out.println("Borrando 'Usuario3':\t" + responseDeleteuser.get_return().getResponse());
+        System.out.println("Borrando 'Usuario3'sesion abierta:\t" + responseDeleteuser.get_return().getResponse());
 
+        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("Usuario3");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
         System.out.println("Borrando 'Usuario3' (false):\t" + responseDeleteuser.get_return().getResponse());
 
+        deleteUser.setArgs0(new Username());
         deleteUser.getArgs0().setUsername("admin");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
         System.out.println("Borrando 'admin'(false):\t" + responseDeleteuser.get_return().getResponse());
-
-
-
-
 
 
     }
