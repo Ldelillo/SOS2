@@ -106,6 +106,65 @@ public class pruebas {
     
 
 
+
+        
+        System.out.println("\n\nCERRRANDO SESIONES");
+
+        Logout logout = new Logout();
+        LogoutResponse responseLogout = stub1.logout(logout);
+        System.out.println("Cierre sesion 'Usuario1':\t" + responseLogout.get_return().getResponse());
+
+        responseLogout = stub1.logout(logout);
+        System.out.println("Cierre sesion 'Usuario1' en la misma instancia (false):\t" + responseLogout.get_return().getResponse());
+
+        responseLogout = stub1_1.logout(logout);
+        System.out.println("Cierre sesion 'Usuario1' en otra instancia:\t" + responseLogout.get_return().getResponse());
+
+        responseLogout = stub1_1.logout(logout);
+        System.out.println("Cierre sesion 'Usuario1' en la misma otra instancia:\t" + responseLogout.get_return().getResponse());
+
+        responseLogout = stubAdmin.logout(logout);
+        System.out.println("Cierre sesion 'admin':\t" + responseLogout.get_return().getResponse());
+
+        login.setArgs0(new User());
+        login.getArgs0().setName("admin");
+        login.getArgs0().setPwd("admin");
+
+        responseLogin = stubAdmin.login(login);
+
+        System.out.println("Inicio sesion admin:\t" + responseLogin.get_return().getResponse());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         System.out.println("\n\nBORRANDO USUARIOS");
         DeleteUser deleteUser = new DeleteUser();
         deleteUser.setArgs0(new Username());
