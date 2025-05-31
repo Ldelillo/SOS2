@@ -8,7 +8,7 @@
 package sos.t3.a32.library;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,10 +32,12 @@ public class ETSIINFLibrarySkeleton {
 
     private class Libros{
         private Book libro;
-        private int cantidad;
+        private int cantidadTotal;
+        private int cantidadPrestamo;
         public Libros(Book newLibro){
             libro = newLibro;
-            cantidad = 1;
+            cantidadTotal = 1;
+            cantidadPrestamo = 0;
         }
     }
 
@@ -57,7 +59,7 @@ public class ETSIINFLibrarySkeleton {
         if (userslogged==null)
             userslogged = new ArrayList<String>();
         if (books == null)
-            books = new HashMap<>();
+            books = new LinkedHashMap<>();
     }
 
     /**
@@ -124,11 +126,28 @@ public class ETSIINFLibrarySkeleton {
      * @return removeBookResponse
      */
 
-    public es.upm.etsiinf.sos.RemoveBookResponse removeBook(
-            es.upm.etsiinf.sos.RemoveBook removeBook) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement " + this.getClass().getName() + "#removeBook");
+    public es.upm.etsiinf.sos.RemoveBookResponse removeBook(es.upm.etsiinf.sos.RemoveBook removeBook) {
+        RemoveBookResponse response = new RemoveBookResponse();
+        Response response2 = new Response();
+        if(userNameLogged.equals("admin") && books.containsKey(removeBook.getArgs0())){
+            //Si tenemos más libros totales que en prestamo (suponemos que cantidad total nunca puede ser 0)
+            if(books.get(removeBook.getArgs0()).cantidadTotal > books.get(removeBook.getArgs0()).cantidadPrestamo ){
+                if(books.get(removeBook.getArgs0()).cantidadTotal>1){
+                    books.get(removeBook.getArgs0()).cantidadTotal--;
+                }
+                else{
+                    books.remove(removeBook.getArgs0());
+                }
+                response2.setResponse(true);
+            }
+            else response2.setResponse(false);
+
+        }
+        else{
+            response2.setResponse(false);
+        }
+        response.set_return(response2);
+        return response;
     }
 
     /**
@@ -213,10 +232,14 @@ public class ETSIINFLibrarySkeleton {
      * @return getBookResponse
      */
 
-    public es.upm.etsiinf.sos.GetBookResponse getBook(
-            es.upm.etsiinf.sos.GetBook getBook) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException("Please implement " + this.getClass().getName() + "#getBook");
+    public es.upm.etsiinf.sos.GetBookResponse getBook(es.upm.etsiinf.sos.GetBook getBook) {
+        GetBookResponse response = new GetBookResponse();
+        Book response2 = null;
+        if(loged && books.containsKey(getBook.getArgs0())){
+            response2 = books.get(getBook.getArgs0()).libro;
+        }
+        response.set_return(response2);
+        return response;
     }
 
     /**
@@ -226,11 +249,22 @@ public class ETSIINFLibrarySkeleton {
      * @return listBooksResponse
      */
 
-    public es.upm.etsiinf.sos.ListBooksResponse listBooks(
-            es.upm.etsiinf.sos.ListBooks listBooks) {
-        // TODO : fill this with the necessary business logic
-        throw new java.lang.UnsupportedOperationException(
-                "Please implement " + this.getClass().getName() + "#listBooks");
+    public es.upm.etsiinf.sos.ListBooksResponse listBooks(es.upm.etsiinf.sos.ListBooks listBooks) {
+        ListBooksResponse response = new ListBooksResponse();
+        BookList response2 = new BookList();
+        if(loged){
+            ArrayList<String> auxNames = new ArrayList<>();
+            ArrayList<String> auxISSN = new ArrayList<>();
+            for(Libros i : books.values()){
+                auxISSN.add(i.libro.getName());
+                auxNames.add(i.libro.getISSN());
+            }
+            response2.setBookNames((String[])auxNames.toArray());
+            response2.setIssns((String[])auxISSN.toArray());  
+        }
+        response2.setResult(loged);        
+        response.set_return(response2);
+        return response;
     }
 
     /**
@@ -365,12 +399,11 @@ public class ETSIINFLibrarySkeleton {
                 else newBook.setName(addBook.getArgs0().getName());
             if(aux){
                 if(books.containsKey(newBook.getISSN())){
-                    books.get(newBook.getISSN()).cantidad++;
+                    books.get(newBook.getISSN()).cantidadTotal++;
                 }
                 else{
                     books.put(newBook.getISSN(), new Libros(newBook));
                 }
-
             }
             response2.setResponse(aux);
         }
