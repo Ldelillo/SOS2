@@ -105,9 +105,31 @@ public class ETSIINFLibrarySkeleton {
      */
 
     public es.upm.etsiinf.sos.DeleteUserResponse deleteUser(es.upm.etsiinf.sos.DeleteUser deleteUser) {
+        //TODO: hay que modificar muchas cosas, esto solo hace el borrado pero no confirma nada mas
         DeleteUserResponse response = new DeleteUserResponse();
+        es.upm.etsiinf.sos.model.xsd.Response response3 = new es.upm.etsiinf.sos.model.xsd.Response();
+        if(userNameLogged.equals(admin.getName()) && !deleteUser.getArgs0().getUsername().equals("admin")){
+            try {
+                UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
 
-        return null;
+                UPMAuthenticationAuthorizationWSSkeletonStub.RemoveUser deleteUser2 = new UPMAuthenticationAuthorizationWSSkeletonStub.RemoveUser(); 
+                deleteUser2.setName(deleteUser.getArgs0().getUsername());
+                RemoveUserE removeUserAux = new RemoveUserE();
+                removeUserAux.setRemoveUser(deleteUser2);
+                UPMAuthenticationAuthorizationWSSkeletonStub.RemoveUserResponseE response2 = stub.removeUser(removeUserAux);
+
+                response3.setResponse(response2.get_return().getResult());
+                response.set_return(response3);
+            } catch (Exception e) {
+                // TODO:ERRORES?
+                e.printStackTrace();
+            }
+        }
+        else{
+            response3.setResponse(false);
+            response.set_return(response3);
+        }
+        return response;
     }
 
     /**
@@ -120,7 +142,7 @@ public class ETSIINFLibrarySkeleton {
     public es.upm.etsiinf.sos.AddUserResponse addUser(es.upm.etsiinf.sos.AddUser addUser) {
         es.upm.etsiinf.sos.AddUserResponse response = new es.upm.etsiinf.sos.AddUserResponse();
         es.upm.etsiinf.sos.model.xsd.AddUserResponse response4 = new es.upm.etsiinf.sos.model.xsd.AddUserResponse();
-        if(userNameLogged.equals(admin.getName()) && addUser.getArgs0().getUsername() != "admin"){
+        if(userNameLogged.equals(admin.getName()) && !addUser.getArgs0().getUsername().equals("admin")){
             try {
                 UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
 
@@ -238,6 +260,7 @@ public class ETSIINFLibrarySkeleton {
             LoginResponseBackEnd response3 = response2.get_return();
             Response response4 = new Response();
             response4.setResponse(response3.getResult());
+            loged = response3.getResult();
             response.set_return(response4);
             userNameLogged = login.getArgs0().getName();
             userslogged.add(userNameLogged);
