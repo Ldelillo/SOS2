@@ -366,7 +366,8 @@ public class ETSIINFLibraryClient {
                 String[] names = responselListBorrowedBooks.get_return().getBookNames();
                 String[] issns = responselListBorrowedBooks.get_return().getIssns();
                 i = 0;
-                j = responselListBorrowedBooks.get_return().getBookNames().length;
+                System.out.println(Arrays.toString(issns));
+                j = issns.length;
                 while (i < j) {
                     System.out.println(names[i] + "\t" + issns[i]);
                     i++;
@@ -404,6 +405,9 @@ public class ETSIINFLibraryClient {
             returnBook.setArgs0("0002");
             responseReturnBook = stub2.returnBook(returnBook);
             System.out.println("Devuelto libro ISSN '0002':\t" + responseReturnBook.get_return().getResponse());
+
+            returnBook.setArgs0("0002");
+            responseReturnBook = stub3.returnBook(returnBook);
 
             returnBook.setArgs0("0002");
             responseReturnBook = stub1.returnBook(returnBook);
@@ -519,6 +523,7 @@ public class ETSIINFLibraryClient {
             responseDeleteuser = stubAdmin.deleteUser(deleteUser);
             System.out.println("Borrando 'admin'(false):\t" + responseDeleteuser.get_return().getResponse());
 
+            
         } catch (org.apache.axis2.AxisFault e) {
             e.printStackTrace();
             System.out.println("AxisFault message: " + e.getMessage());

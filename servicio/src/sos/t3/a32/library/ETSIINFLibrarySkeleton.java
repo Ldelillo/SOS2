@@ -34,7 +34,7 @@ public class ETSIINFLibrarySkeleton {
 
     private static User admin;
 
-    private class Libros {
+    private static class Libros {
         private Book libro;
         private int cantidadTotal;
         private int cantidadPrestamo;
@@ -515,20 +515,32 @@ public class ETSIINFLibrarySkeleton {
         ListBorrowedBooksResponse response = new ListBorrowedBooksResponse();
         BookList response2 = new BookList();
         if (loged && !usuariosEliminados.contains(userNameLogged)) {
-            ArrayList<String> auxISSN = new ArrayList<>();
-            ArrayList<String> auxNombres = new ArrayList<>();
+            ArrayList<String> auxISSN = new ArrayList<String>();
+            ArrayList<String> auxNombres = new ArrayList<String>();
             for (String i : listaPrestamos.get(userNameLogged)) {
                 auxISSN.add(i);
                 auxNombres.add(books.get(i).libro.getName());
             }
             Collections.reverse(auxISSN);
             Collections.reverse(auxNombres);
-            String[] aux = new String[auxISSN.size()];
+            String[] aux;
+            if (auxISSN.size() > 0) {
+                aux = new String[auxISSN.size()];
+            } else
+                aux = new String[] { "" };
             auxISSN.toArray(aux);
             response2.setIssns(aux);
-            aux = new String[auxNombres.size()];
+            if (auxNombres.size() > 0) {
+                aux = new String[auxNombres.size()];
+            } else
+                aux = new String[] { "" };
             auxNombres.toArray(aux);
             response2.setBookNames(aux);
+
+        } else {
+            String[] auxVacio = { "" };
+            response2.setBookNames(auxVacio);
+            response2.setIssns(auxVacio);
         }
         response2.setResult(loged && !usuariosEliminados.contains(userNameLogged));
         response.set_return(response2);
