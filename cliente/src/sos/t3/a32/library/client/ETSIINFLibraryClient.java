@@ -11,11 +11,11 @@ public class ETSIINFLibraryClient {
 
     public static void main(String[] args) throws Exception {
         try {
-            ETSIINFLibraryStub stubAdmin = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
-            ETSIINFLibraryStub stub1 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
-            ETSIINFLibraryStub stub1_1 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
-            ETSIINFLibraryStub stub2 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
-            ETSIINFLibraryStub stub3 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stubAdmin = new ETSIINFLibraryStub();
+            ETSIINFLibraryStub stub1 = new ETSIINFLibraryStub();
+            ETSIINFLibraryStub stub1_1 = new ETSIINFLibraryStub();
+            ETSIINFLibraryStub stub2 = new ETSIINFLibraryStub();
+            ETSIINFLibraryStub stub3 = new ETSIINFLibraryStub();
 
             stubAdmin._getServiceClient().engageModule("addressing");
             stubAdmin._getServiceClient().getOptions().setManageSession(true);
@@ -46,6 +46,13 @@ public class ETSIINFLibraryClient {
             LoginResponse responseLogin = stubAdmin.login(login);
 
             System.out.println("Inicio sesion admin:\t" + responseLogin.get_return().getResponse());
+
+            Logout out = new Logout();
+
+            LogoutResponse rsp = stubAdmin.logout(out);
+            System.out.println(rsp.get_return().getResponse());
+
+
 
             System.out.println("\n\nCREANDO USUARIOS");
             String pwd1 = "";

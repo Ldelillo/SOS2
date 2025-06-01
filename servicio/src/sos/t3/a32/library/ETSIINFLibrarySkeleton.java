@@ -68,6 +68,7 @@ public class ETSIINFLibrarySkeleton {
      */
     public ETSIINFLibrarySkeleton() {
         loged = false;
+        userNameLogged = "";
         if (admin == null) {
             admin = new User();
             admin.setName("admin");
