@@ -60,6 +60,7 @@ public class ETSIINFLibrarySkeleton {
 
     private boolean loged;
     private String userNameLogged;
+    static UPMAuthenticationAuthorizationWSSkeletonStub stub;
 
     /**
      * Constructor
@@ -79,6 +80,12 @@ public class ETSIINFLibrarySkeleton {
             listaPrestamos = new HashMap<>();
         if (usuariosEliminados == null)
             usuariosEliminados = new ArrayList<>();
+        if (stub == null){
+            try{
+            stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+            }
+            catch (Exception ignore){}
+        }
     }
     
     /**
@@ -196,7 +203,7 @@ public class ETSIINFLibrarySkeleton {
                 (listaPrestamos.containsKey(deleteUser.getArgs0().getUsername()) &&
                 listaPrestamos.get(deleteUser.getArgs0().getUsername()).isEmpty())) {
             try {
-                UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+                
 
                 UPMAuthenticationAuthorizationWSSkeletonStub.RemoveUser deleteUser2 = new UPMAuthenticationAuthorizationWSSkeletonStub.RemoveUser();
                 deleteUser2.setName(deleteUser.getArgs0().getUsername());
@@ -232,7 +239,7 @@ public class ETSIINFLibrarySkeleton {
         es.upm.etsiinf.sos.model.xsd.AddUserResponse response4 = new es.upm.etsiinf.sos.model.xsd.AddUserResponse();
         if (userNameLogged.equals(admin.getName()) && !addUser.getArgs0().getUsername().equals("admin")) {
             try {
-                UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+                
 
                 UPMAuthenticationAuthorizationWSSkeletonStub.AddUser addUser2 = new UPMAuthenticationAuthorizationWSSkeletonStub.AddUser();
                 UserBackEnd userAux = new UserBackEnd();
@@ -327,7 +334,7 @@ public class ETSIINFLibrarySkeleton {
                 }
             } else {
                 try {
-                    UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+                    
                     UPMAuthenticationAuthorizationWSSkeletonStub.ChangePassword changePassword2 = new UPMAuthenticationAuthorizationWSSkeletonStub.ChangePassword();
 
                     ChangePasswordBackEnd changePassword3 = new ChangePasswordBackEnd();
@@ -385,7 +392,7 @@ public class ETSIINFLibrarySkeleton {
         }
 
         try {
-            UPMAuthenticationAuthorizationWSSkeletonStub stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+            
             UPMAuthenticationAuthorizationWSSkeletonStub.Login loginAux = new es.upm.etsiinf.sos.auth.UPMAuthenticationAuthorizationWSSkeletonStub.Login();
 
             LoginBackEnd loginAux2 = new LoginBackEnd();
