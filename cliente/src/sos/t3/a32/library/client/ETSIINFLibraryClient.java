@@ -47,11 +47,6 @@ public class ETSIINFLibraryClient {
 
             System.out.println("Inicio sesion admin:\t" + responseLogin.get_return().getResponse());
 
-            Logout out = new Logout();
-
-            LogoutResponse rsp = stubAdmin.logout(out);
-            System.out.println(rsp.get_return().getResponse());
-
 
 
             System.out.println("\n\nCREANDO USUARIOS");

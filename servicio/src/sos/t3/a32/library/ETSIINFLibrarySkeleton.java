@@ -403,9 +403,7 @@ public class ETSIINFLibrarySkeleton {
         }
 
         try {
-
             UPMAuthenticationAuthorizationWSSkeletonStub.Login loginAux = new es.upm.etsiinf.sos.auth.UPMAuthenticationAuthorizationWSSkeletonStub.Login();
-
             LoginBackEnd loginAux2 = new LoginBackEnd();
             loginAux2.setName(login.getArgs0().getName());
             loginAux2.setPassword(login.getArgs0().getPwd());
