@@ -1,461 +1,290 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl2:description xmlns:wsdl2="http://www.w3.org/ns/wsdl" xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" xmlns:whttp="http://www.w3.org/ns/wsdl/http" xmlns:ns="http://library.a32.t3.sos" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions" xmlns:tns="http://library.a32.t3.sos" xmlns:wrpc="http://www.w3.org/ns/wsdl/rpc" xmlns:ax22="http://xsd.model.sos.etsiinf.upm.es/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax21="http://sos.etsiinf.upm.es/xsd" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://library.a32.t3.sos">
+<wsdl2:description xmlns:wsdl2="http://www.w3.org/ns/wsdl" xmlns:wsoap="http://www.w3.org/ns/wsdl/soap" xmlns:whttp="http://www.w3.org/ns/wsdl/http" xmlns:ns="http://sos.etsiinf.upm.es" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions" xmlns:tns="http://sos.etsiinf.upm.es" xmlns:wrpc="http://www.w3.org/ns/wsdl/rpc" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax21="http://model.sos.etsiinf.upm.es/xsd" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://sos.etsiinf.upm.es">
     <wsdl2:types>
-        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xsd.model.sos.etsiinf.upm.es/xsd">
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://model.sos.etsiinf.upm.es/xsd">
             <xs:complexType name="Username">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="username" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="usernameSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="Response">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="response" type="xs:boolean"/>
-                    <xs:element minOccurs="0" name="responseSpecified" type="xs:boolean"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="AddUserResponse">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="pwd" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="pwdSpecified" type="xs:boolean"/>
                     <xs:element minOccurs="0" name="response" type="xs:boolean"/>
-                    <xs:element minOccurs="0" name="responseSpecified" type="xs:boolean"/>
                 </xs:sequence>
             </xs:complexType>
-            <xs:complexType name="User">
+            <xs:complexType name="Response">
                 <xs:sequence>
-                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="nameSpecified" type="xs:boolean"/>
-                    <xs:element minOccurs="0" name="pwd" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="pwdSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="Book">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="ISSN" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="ISSNSpecified" type="xs:boolean"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="authors" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="authorsSpecified" type="xs:boolean"/>
-                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="nameSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="Author">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="nameSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="BookList">
-                <xs:sequence>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="bookNames" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="bookNamesSpecified" type="xs:boolean"/>
-                    <xs:element maxOccurs="unbounded" minOccurs="0" name="issns" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="issnsSpecified" type="xs:boolean"/>
-                    <xs:element minOccurs="0" name="result" type="xs:boolean"/>
-                    <xs:element minOccurs="0" name="resultSpecified" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="response" type="xs:boolean"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="PasswordPair">
                 <xs:sequence>
                     <xs:element minOccurs="0" name="newpwd" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="newpwdSpecified" type="xs:boolean"/>
                     <xs:element minOccurs="0" name="oldpwd" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="oldpwdSpecified" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Author">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BookList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="bookNames" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="issns" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="result" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="User">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pwd" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Book">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="ISSN" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="authors" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>
-        <xs:schema xmlns:ax24="http://sos.etsiinf.upm.es/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://library.a32.t3.sos">
-            <xs:import namespace="http://sos.etsiinf.upm.es/xsd"/>
-            <xs:element name="deleteUser">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="deleteUser" nillable="true" type="ax21:DeleteUser"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="deleteUserResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:DeleteUserResponse"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
+        <xs:schema xmlns:ax22="http://model.sos.etsiinf.upm.es/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://sos.etsiinf.upm.es">
+            <xs:import namespace="http://model.sos.etsiinf.upm.es/xsd"/>
             <xs:element name="addUser">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="addUser" nillable="true" type="ax21:AddUser"/>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:Username"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="addUserResponse">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:AddUserResponse"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="logout">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="logout" nillable="true" type="ax21:Logout"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="logoutResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:LogoutResponse"/>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:AddUserResponse"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="removeBook">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="removeBook" nillable="true" type="ax21:RemoveBook"/>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="removeBookResponse">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:RemoveBookResponse"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="login">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="login" nillable="true" type="ax21:Login"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="loginResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:LoginResponse"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="borrowBook">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="borrowBook" nillable="true" type="ax21:BorrowBook"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="borrowBookResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:BorrowBookResponse"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="addBook">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="addBook" nillable="true" type="ax21:AddBook"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="addBookResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:AddBookResponse"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="getBooksFromAuthor">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="getBooksFromAuthor" nillable="true" type="ax21:GetBooksFromAuthor"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="getBooksFromAuthorResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:GetBooksFromAuthorResponse"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="listBorrowedBooks">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="listBorrowedBooks" nillable="true" type="ax21:ListBorrowedBooks"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="listBorrowedBooksResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:ListBorrowedBooksResponse"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="listBooks">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="listBooks" nillable="true" type="ax21:ListBooks"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="listBooksResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:ListBooksResponse"/>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Response"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="changePassword">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="changePassword" nillable="true" type="ax21:ChangePassword"/>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:PasswordPair"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="changePasswordResponse">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:ChangePasswordResponse"/>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Response"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="logout">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="logoutResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Response"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteUser">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:Username"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteUserResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Response"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="returnBook">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="returnBook" nillable="true" type="ax21:ReturnBook"/>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="returnBookResponse">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:ReturnBookResponse"/>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Response"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBooksFromAuthor">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:Author"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBooksFromAuthorResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:BookList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listBooks">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listBooksResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:BookList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="borrowBook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="borrowBookResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Response"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="login">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:User"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="loginResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Response"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="getBook">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="getBook" nillable="true" type="ax21:GetBook"/>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
             <xs:element name="getBookResponse">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="return" nillable="true" type="ax21:GetBookResponse"/>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Book"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listBorrowedBooks">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="listBorrowedBooksResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:BookList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addBook">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:Book"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="addBookResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax22:Response"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
         </xs:schema>
-        <xs:schema xmlns:ax23="http://xsd.model.sos.etsiinf.upm.es/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://sos.etsiinf.upm.es/xsd">
-            <xs:import namespace="http://xsd.model.sos.etsiinf.upm.es/xsd"/>
-            <xs:complexType name="DeleteUser">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:Username"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="DeleteUserResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Response"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="AddUser">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:Username"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="AddUserResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:AddUserResponse"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="Logout">
-                <xs:sequence/>
-            </xs:complexType>
-            <xs:complexType name="LogoutResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Response"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="RemoveBook">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="RemoveBookResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Response"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="Login">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:User"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="LoginResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Response"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="BorrowBook">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="BorrowBookResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Response"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="AddBook">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:Book"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="AddBookResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Response"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="GetBooksFromAuthor">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:Author"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="GetBooksFromAuthorResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:BookList"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="ListBorrowedBooks">
-                <xs:sequence/>
-            </xs:complexType>
-            <xs:complexType name="ListBorrowedBooksResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:BookList"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="ListBooks">
-                <xs:sequence/>
-            </xs:complexType>
-            <xs:complexType name="ListBooksResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:BookList"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="ChangePassword">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="ax22:PasswordPair"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="ChangePasswordResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Response"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="ReturnBook">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="ReturnBookResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Response"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="GetBook">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
-                    <xs:element minOccurs="0" name="args0Specified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:complexType name="GetBookResponse">
-                <xs:sequence>
-                    <xs:element minOccurs="0" name="_return" nillable="true" type="ax22:Book"/>
-                    <xs:element minOccurs="0" name="_returnSpecified" type="xs:boolean"/>
-                </xs:sequence>
-            </xs:complexType>
-        </xs:schema>
     </wsdl2:types>
     <wsdl2:interface name="ServiceInterface">
-        <wsdl2:operation name="getBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="getBook #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="getBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:getBook" wsaw:Action="urn:getBook"/>
             <wsdl2:output element="ns:getBookResponse" wsaw:Action="urn:getBookResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="listBooks" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="listBooks #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="listBooks" style="http://www.w3.org/ns/wsdl/style/rpc http://www.w3.org/ns/wsdl/style/iri http://www.w3.org/ns/wsdl/style/multipart" wrpc:signature="return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:listBooks" wsaw:Action="urn:listBooks"/>
             <wsdl2:output element="ns:listBooksResponse" wsaw:Action="urn:listBooksResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="addUser" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="addUser #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="addUser" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:addUser" wsaw:Action="urn:addUser"/>
             <wsdl2:output element="ns:addUserResponse" wsaw:Action="urn:addUserResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="getBooksFromAuthor" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="getBooksFromAuthor #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="getBooksFromAuthor" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:getBooksFromAuthor" wsaw:Action="urn:getBooksFromAuthor"/>
             <wsdl2:output element="ns:getBooksFromAuthorResponse" wsaw:Action="urn:getBooksFromAuthorResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="listBorrowedBooks" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="listBorrowedBooks #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="listBorrowedBooks" style="http://www.w3.org/ns/wsdl/style/rpc http://www.w3.org/ns/wsdl/style/iri http://www.w3.org/ns/wsdl/style/multipart" wrpc:signature="return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:listBorrowedBooks" wsaw:Action="urn:listBorrowedBooks"/>
             <wsdl2:output element="ns:listBorrowedBooksResponse" wsaw:Action="urn:listBorrowedBooksResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="addBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="addBook #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="addBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:addBook" wsaw:Action="urn:addBook"/>
             <wsdl2:output element="ns:addBookResponse" wsaw:Action="urn:addBookResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="login" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="login #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="login" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:login" wsaw:Action="urn:login"/>
             <wsdl2:output element="ns:loginResponse" wsaw:Action="urn:loginResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="changePassword" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="changePassword #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="changePassword" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:changePassword" wsaw:Action="urn:changePassword"/>
             <wsdl2:output element="ns:changePasswordResponse" wsaw:Action="urn:changePasswordResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="logout" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="logout #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
-            <wsdl2:input element="ns:logout" wsaw:Action="urn:logout"/>
-            <wsdl2:output element="ns:logoutResponse" wsaw:Action="urn:logoutResponse"/>
-        </wsdl2:operation>
-        <wsdl2:operation name="borrowBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="borrowBook #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="borrowBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:borrowBook" wsaw:Action="urn:borrowBook"/>
             <wsdl2:output element="ns:borrowBookResponse" wsaw:Action="urn:borrowBookResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="returnBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="returnBook #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="returnBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:returnBook" wsaw:Action="urn:returnBook"/>
             <wsdl2:output element="ns:returnBookResponse" wsaw:Action="urn:returnBookResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="deleteUser" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="deleteUser #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="logout" style="http://www.w3.org/ns/wsdl/style/rpc http://www.w3.org/ns/wsdl/style/iri http://www.w3.org/ns/wsdl/style/multipart" wrpc:signature="return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+            <wsdl2:input element="ns:logout" wsaw:Action="urn:logout"/>
+            <wsdl2:output element="ns:logoutResponse" wsaw:Action="urn:logoutResponse"/>
+        </wsdl2:operation>
+        <wsdl2:operation name="deleteUser" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:deleteUser" wsaw:Action="urn:deleteUser"/>
             <wsdl2:output element="ns:deleteUserResponse" wsaw:Action="urn:deleteUserResponse"/>
         </wsdl2:operation>
-        <wsdl2:operation name="removeBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="removeBook #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
+        <wsdl2:operation name="removeBook" style="http://www.w3.org/ns/wsdl/style/rpc" wrpc:signature="args0 #in return #return " pattern="http://www.w3.org/ns/wsdl/in-out">
             <wsdl2:input element="ns:removeBook" wsaw:Action="urn:removeBook"/>
             <wsdl2:output element="ns:removeBookResponse" wsaw:Action="urn:removeBookResponse"/>
         </wsdl2:operation>
     </wsdl2:interface>
-    <wsdl2:binding name="ETSIINFLibrarySkeletonSoap11Binding" interface="tns:ServiceInterface" type="http://www.w3.org/ns/wsdl/soap" wsoap:version="1.1">
+    <wsdl2:binding name="ETSIINFLibrarySoap12Binding" interface="tns:ServiceInterface" type="http://www.w3.org/ns/wsdl/soap" wsoap:version="1.2">
         <wsdl2:operation ref="tns:getBook" wsoap:action="urn:getBook">
             <wsdl2:input/>
             <wsdl2:output/>
@@ -488,15 +317,15 @@
             <wsdl2:input/>
             <wsdl2:output/>
         </wsdl2:operation>
-        <wsdl2:operation ref="tns:logout" wsoap:action="urn:logout">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
         <wsdl2:operation ref="tns:borrowBook" wsoap:action="urn:borrowBook">
             <wsdl2:input/>
             <wsdl2:output/>
         </wsdl2:operation>
         <wsdl2:operation ref="tns:returnBook" wsoap:action="urn:returnBook">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:logout" wsoap:action="urn:logout">
             <wsdl2:input/>
             <wsdl2:output/>
         </wsdl2:operation>
@@ -509,7 +338,61 @@
             <wsdl2:output/>
         </wsdl2:operation>
     </wsdl2:binding>
-    <wsdl2:binding name="ETSIINFLibrarySkeletonHttpBinding" interface="tns:ServiceInterface" whttp:methodDefault="POST" type="http://www.w3.org/ns/wsdl/http">
+    <wsdl2:binding name="ETSIINFLibrarySoap11Binding" interface="tns:ServiceInterface" type="http://www.w3.org/ns/wsdl/soap" wsoap:version="1.1">
+        <wsdl2:operation ref="tns:getBook" wsoap:action="urn:getBook">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:listBooks" wsoap:action="urn:listBooks">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:addUser" wsoap:action="urn:addUser">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:listBorrowedBooks" wsoap:action="urn:listBorrowedBooks">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:getBooksFromAuthor" wsoap:action="urn:getBooksFromAuthor">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:addBook" wsoap:action="urn:addBook">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:login" wsoap:action="urn:login">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:changePassword" wsoap:action="urn:changePassword">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:borrowBook" wsoap:action="urn:borrowBook">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:returnBook" wsoap:action="urn:returnBook">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:logout" wsoap:action="urn:logout">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:deleteUser" wsoap:action="urn:deleteUser">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:removeBook" wsoap:action="urn:removeBook">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+    </wsdl2:binding>
+    <wsdl2:binding name="ETSIINFLibraryHttpBinding" interface="tns:ServiceInterface" whttp:methodDefault="POST" type="http://www.w3.org/ns/wsdl/http">
         <wsdl2:operation ref="tns:getBook" whttp:location="getBook">
             <wsdl2:input/>
             <wsdl2:output/>
@@ -542,15 +425,15 @@
             <wsdl2:input/>
             <wsdl2:output/>
         </wsdl2:operation>
-        <wsdl2:operation ref="tns:logout" whttp:location="logout">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
         <wsdl2:operation ref="tns:borrowBook" whttp:location="borrowBook">
             <wsdl2:input/>
             <wsdl2:output/>
         </wsdl2:operation>
         <wsdl2:operation ref="tns:returnBook" whttp:location="returnBook">
+            <wsdl2:input/>
+            <wsdl2:output/>
+        </wsdl2:operation>
+        <wsdl2:operation ref="tns:logout" whttp:location="logout">
             <wsdl2:input/>
             <wsdl2:output/>
         </wsdl2:operation>
@@ -563,63 +446,9 @@
             <wsdl2:output/>
         </wsdl2:operation>
     </wsdl2:binding>
-    <wsdl2:binding name="ETSIINFLibrarySkeletonSoap12Binding" interface="tns:ServiceInterface" type="http://www.w3.org/ns/wsdl/soap" wsoap:version="1.2">
-        <wsdl2:operation ref="tns:getBook" wsoap:action="urn:getBook">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:listBooks" wsoap:action="urn:listBooks">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:addUser" wsoap:action="urn:addUser">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:listBorrowedBooks" wsoap:action="urn:listBorrowedBooks">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:getBooksFromAuthor" wsoap:action="urn:getBooksFromAuthor">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:addBook" wsoap:action="urn:addBook">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:login" wsoap:action="urn:login">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:changePassword" wsoap:action="urn:changePassword">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:logout" wsoap:action="urn:logout">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:borrowBook" wsoap:action="urn:borrowBook">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:returnBook" wsoap:action="urn:returnBook">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:deleteUser" wsoap:action="urn:deleteUser">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-        <wsdl2:operation ref="tns:removeBook" wsoap:action="urn:removeBook">
-            <wsdl2:input/>
-            <wsdl2:output/>
-        </wsdl2:operation>
-    </wsdl2:binding>
-    <wsdl2:service name="ETSIINFLibrarySkeleton" interface="tns:ServiceInterface">
-        <wsdl2:endpoint name="ETSIINFLibrarySkeletonHttpSoap11Endpoint" binding="tns:ETSIINFLibrarySkeletonSoap11Binding" address="http://localhost:8080/axis2/services/ETSIINFLibrarySkeleton"/>
-        <wsdl2:endpoint name="ETSIINFLibrarySkeletonHttpEndpoint" binding="tns:ETSIINFLibrarySkeletonHttpBinding" address="http://localhost:8080/axis2/services/ETSIINFLibrarySkeleton"/>
-        <wsdl2:endpoint name="ETSIINFLibrarySkeletonHttpSoap12Endpoint" binding="tns:ETSIINFLibrarySkeletonSoap12Binding" address="http://localhost:8080/axis2/services/ETSIINFLibrarySkeleton"/>
+    <wsdl2:service name="ETSIINFLibrary" interface="tns:ServiceInterface">
+        <wsdl2:endpoint name="ETSIINFLibraryHttpEndpoint" binding="tns:ETSIINFLibraryHttpBinding" address="http://localhost:8080/axis2/services/ETSIINFLibrary"/>
+        <wsdl2:endpoint name="ETSIINFLibraryHttpSoap12Endpoint" binding="tns:ETSIINFLibrarySoap12Binding" address="http://localhost:8080/axis2/services/ETSIINFLibrary"/>
+        <wsdl2:endpoint name="ETSIINFLibraryHttpSoap11Endpoint" binding="tns:ETSIINFLibrarySoap11Binding" address="http://localhost:8080/axis2/services/ETSIINFLibrary"/>
     </wsdl2:service>
 </wsdl2:description>

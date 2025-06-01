@@ -7,6 +7,7 @@
  */
 package sos.t3.a32.library;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -80,14 +81,14 @@ public class ETSIINFLibrarySkeleton {
             listaPrestamos = new HashMap<>();
         if (usuariosEliminados == null)
             usuariosEliminados = new ArrayList<>();
-        if (stub == null){
-            try{
-            stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+        if (stub == null) {
+            try {
+                stub = new UPMAuthenticationAuthorizationWSSkeletonStub();
+            } catch (Exception ignore) {
             }
-            catch (Exception ignore){}
         }
     }
-    
+
     /**
      * Auto generated method signature
      * 
@@ -100,7 +101,8 @@ public class ETSIINFLibrarySkeleton {
         Response response2 = new Response();
         if (loged && !usuariosEliminados.contains(userNameLogged) && books.containsKey(borrowBook.getArgs0())
                 && books.get(borrowBook.getArgs0()).cantidadTotal > books.get(borrowBook.getArgs0()).cantidadPrestamo
-                &&(listaPrestamos.containsKey(userNameLogged) && !listaPrestamos.get(userNameLogged).contains(borrowBook.getArgs0()))){
+                && (listaPrestamos.containsKey(userNameLogged)
+                        && !listaPrestamos.get(userNameLogged).contains(borrowBook.getArgs0()))) {
             books.get(borrowBook.getArgs0()).cantidadPrestamo++;
             listaPrestamos.get(userNameLogged).add(borrowBook.getArgs0());
             response2.setResponse(true);
@@ -120,8 +122,9 @@ public class ETSIINFLibrarySkeleton {
     public es.upm.etsiinf.sos.ReturnBookResponse returnBook(es.upm.etsiinf.sos.ReturnBook returnBook) {
         ReturnBookResponse response = new ReturnBookResponse();
         Response response2 = new Response();
-        if (loged && !usuariosEliminados.contains(userNameLogged) && books.containsKey(returnBook.getArgs0()) && (listaPrestamos.containsKey(userNameLogged)
-        &&listaPrestamos.get(userNameLogged).contains(returnBook.getArgs0()))) {
+        if (loged && !usuariosEliminados.contains(userNameLogged) && books.containsKey(returnBook.getArgs0())
+                && (listaPrestamos.containsKey(userNameLogged)
+                        && listaPrestamos.get(userNameLogged).contains(returnBook.getArgs0()))) {
             books.get(returnBook.getArgs0()).cantidadPrestamo--;
             listaPrestamos.get(userNameLogged).remove(returnBook.getArgs0());
             response2.setResponse(true);
@@ -196,14 +199,13 @@ public class ETSIINFLibrarySkeleton {
      * @return deleteUserResponse
      */
 
-    public es.upm.etsiinf.sos.DeleteUserResponse deleteUser(es.upm.etsiinf.sos.DeleteUser deleteUser) {
+    public es.upm.etsiinf.sos.DeleteUserResponse deleteUser(es.upm.etsiinf.sos.DeleteUser deleteUser) throws AxisFault {
         DeleteUserResponse response = new DeleteUserResponse();
         es.upm.etsiinf.sos.model.xsd.Response response3 = new es.upm.etsiinf.sos.model.xsd.Response();
         if (userNameLogged.equals(admin.getName()) && !deleteUser.getArgs0().getUsername().equals("admin") &&
                 (listaPrestamos.containsKey(deleteUser.getArgs0().getUsername()) &&
-                listaPrestamos.get(deleteUser.getArgs0().getUsername()).isEmpty())) {
+                        listaPrestamos.get(deleteUser.getArgs0().getUsername()).isEmpty())) {
             try {
-                
 
                 UPMAuthenticationAuthorizationWSSkeletonStub.RemoveUser deleteUser2 = new UPMAuthenticationAuthorizationWSSkeletonStub.RemoveUser();
                 deleteUser2.setName(deleteUser.getArgs0().getUsername());
@@ -214,10 +216,13 @@ public class ETSIINFLibrarySkeleton {
 
                 response3.setResponse(response2.get_return().getResult());
                 listaPrestamos.remove(deleteUser2.getName());
-                if(response3.getResponse())
+                if (response3.getResponse())
                     usuariosEliminados.add(deleteUser.getArgs0().getUsername());
                 response.set_return(response3);
-            } catch (Exception e) {
+            } catch (AxisFault e) {
+                e.printStackTrace();
+                throw e;
+            } catch (RemoteException e) {
                 e.printStackTrace();
             }
         } else {
@@ -234,12 +239,11 @@ public class ETSIINFLibrarySkeleton {
      * @return addUserResponse
      */
 
-    public es.upm.etsiinf.sos.AddUserResponse addUser(es.upm.etsiinf.sos.AddUser addUser) {
+    public es.upm.etsiinf.sos.AddUserResponse addUser(es.upm.etsiinf.sos.AddUser addUser) throws AxisFault {
         es.upm.etsiinf.sos.AddUserResponse response = new es.upm.etsiinf.sos.AddUserResponse();
         es.upm.etsiinf.sos.model.xsd.AddUserResponse response4 = new es.upm.etsiinf.sos.model.xsd.AddUserResponse();
         if (userNameLogged.equals(admin.getName()) && !addUser.getArgs0().getUsername().equals("admin")) {
             try {
-                
 
                 UPMAuthenticationAuthorizationWSSkeletonStub.AddUser addUser2 = new UPMAuthenticationAuthorizationWSSkeletonStub.AddUser();
                 UserBackEnd userAux = new UserBackEnd();
@@ -254,11 +258,14 @@ public class ETSIINFLibrarySkeleton {
                 if (response3.getResult())
                     response4.setPwd(response3.getPassword());
                 listaPrestamos.put(userAux.getName(), new ArrayList<>());
-                if(usuariosEliminados.contains(addUser.getArgs0().getUsername())) 
+                if (usuariosEliminados.contains(addUser.getArgs0().getUsername()))
                     usuariosEliminados.remove(addUser.getArgs0().getUsername());
                 response.set_return(response4);
 
-            } catch (Exception e) {
+            } catch (AxisFault e) {
+                e.printStackTrace();
+                throw e;
+            } catch (RemoteException e) {
                 e.printStackTrace();
             }
         } else {
@@ -321,7 +328,8 @@ public class ETSIINFLibrarySkeleton {
      * @return changePasswordResponse
      */
 
-    public es.upm.etsiinf.sos.ChangePasswordResponse changePassword(es.upm.etsiinf.sos.ChangePassword changePassword) {
+    public es.upm.etsiinf.sos.ChangePasswordResponse changePassword(es.upm.etsiinf.sos.ChangePassword changePassword)
+            throws AxisFault {
         ChangePasswordResponse response = new ChangePasswordResponse();
         Response response4 = new Response();
         if (loged) {
@@ -334,7 +342,7 @@ public class ETSIINFLibrarySkeleton {
                 }
             } else {
                 try {
-                    
+
                     UPMAuthenticationAuthorizationWSSkeletonStub.ChangePassword changePassword2 = new UPMAuthenticationAuthorizationWSSkeletonStub.ChangePassword();
 
                     ChangePasswordBackEnd changePassword3 = new ChangePasswordBackEnd();
@@ -346,10 +354,12 @@ public class ETSIINFLibrarySkeleton {
                     ChangePasswordResponseE responseE = stub.changePassword(changePassword2);
                     response4.setResponse(responseE.get_return().getResult());
 
-                } catch (Exception e) {
+                } catch (AxisFault e) {
+                    e.printStackTrace();
+                    throw e;
+                } catch (RemoteException e) {
                     e.printStackTrace();
                 }
-
             }
         } else {
             response4.setResponse(false);
@@ -365,7 +375,7 @@ public class ETSIINFLibrarySkeleton {
      * @return loginResponse
      */
 
-    public es.upm.etsiinf.sos.LoginResponse login(es.upm.etsiinf.sos.Login login) {
+    public es.upm.etsiinf.sos.LoginResponse login(es.upm.etsiinf.sos.Login login) throws AxisFault {
         es.upm.etsiinf.sos.LoginResponse response = new es.upm.etsiinf.sos.LoginResponse();
         // Si se llama a la funcion con el usuario ya iniciado da true
         // independientemente de la entrada.
@@ -392,7 +402,7 @@ public class ETSIINFLibrarySkeleton {
         }
 
         try {
-            
+
             UPMAuthenticationAuthorizationWSSkeletonStub.Login loginAux = new es.upm.etsiinf.sos.auth.UPMAuthenticationAuthorizationWSSkeletonStub.Login();
 
             LoginBackEnd loginAux2 = new LoginBackEnd();
@@ -410,7 +420,10 @@ public class ETSIINFLibrarySkeleton {
             response.set_return(response4);
             userNameLogged = login.getArgs0().getName();
             userslogged.add(userNameLogged);
-        } catch (Exception e) {
+        } catch (AxisFault e) {
+            e.printStackTrace();
+            throw e;
+        } catch (RemoteException e) {
             e.printStackTrace();
         }
 
@@ -465,7 +478,8 @@ public class ETSIINFLibrarySkeleton {
      * @return getBooksFromAuthorResponse
      */
 
-    public es.upm.etsiinf.sos.GetBooksFromAuthorResponse getBooksFromAuthor(es.upm.etsiinf.sos.GetBooksFromAuthor getBooksFromAuthor) {
+    public es.upm.etsiinf.sos.GetBooksFromAuthorResponse getBooksFromAuthor(
+            es.upm.etsiinf.sos.GetBooksFromAuthor getBooksFromAuthor) {
         GetBooksFromAuthorResponse response = new GetBooksFromAuthorResponse();
         BookList response2 = new BookList();
 
@@ -497,16 +511,17 @@ public class ETSIINFLibrarySkeleton {
      * @return listBorrowedBooksResponse
      */
 
-    public es.upm.etsiinf.sos.ListBorrowedBooksResponse listBorrowedBooks(es.upm.etsiinf.sos.ListBorrowedBooks listBorrowedBooks) {
+    public es.upm.etsiinf.sos.ListBorrowedBooksResponse listBorrowedBooks(
+            es.upm.etsiinf.sos.ListBorrowedBooks listBorrowedBooks) {
         ListBorrowedBooksResponse response = new ListBorrowedBooksResponse();
         BookList response2 = new BookList();
-        if(loged && !usuariosEliminados.contains(userNameLogged)){
+        if (loged && !usuariosEliminados.contains(userNameLogged)) {
             ArrayList<String> auxISSN = new ArrayList<>();
             ArrayList<String> auxNombres = new ArrayList<>();
-            for(String i : listaPrestamos.get(userNameLogged)){
+            for (String i : listaPrestamos.get(userNameLogged)) {
                 auxISSN.add(i);
                 auxNombres.add(books.get(i).libro.getName());
-            }       
+            }
             Collections.reverse(auxISSN);
             Collections.reverse(auxNombres);
             String[] aux = new String[auxISSN.size()];
@@ -514,7 +529,7 @@ public class ETSIINFLibrarySkeleton {
             response2.setIssns(aux);
             aux = new String[auxNombres.size()];
             auxNombres.toArray(aux);
-            response2.setBookNames(aux); 
+            response2.setBookNames(aux);
         }
         response2.setResult(loged && !usuariosEliminados.contains(userNameLogged));
         response.set_return(response2);

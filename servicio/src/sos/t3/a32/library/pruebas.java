@@ -7,6 +7,7 @@ import es.upm.etsiinf.sos.model.xsd.*;
 
 public class pruebas {
     public static void main(String[] args) {
+        try{
         ETSIINFLibrarySkeleton stubAdmin = new ETSIINFLibrarySkeleton();
         ETSIINFLibrarySkeleton stub1 = new ETSIINFLibrarySkeleton();
         ETSIINFLibrarySkeleton stub1_1 = new ETSIINFLibrarySkeleton();
@@ -583,5 +584,7 @@ System.out.println("\n\nCOMPROBANDO PERMISOS DE ADMIN");
         deleteUser.getArgs0().setUsername("admin");
         responseDeleteuser = stubAdmin.deleteUser(deleteUser);
         System.out.println("Borrando 'admin'(false):\t" + responseDeleteuser.get_return().getResponse());
+    }
+    catch (Exception e){}
     }
 }

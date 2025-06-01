@@ -5,17 +5,17 @@ import java.util.Arrays;
 
 import org.apache.axis2.AxisFault;
 
-import sos.t3.a32.library.client.ETSIINFLibrarySkeletonStub.*;
+import sos.t3.a32.library.client.ETSIINFLibraryStub.*;
 
 public class ETSIINFLibraryClient {
 
     public static void main(String[] args) throws Exception {
         try {
-            ETSIINFLibrarySkeletonStub stubAdmin = new ETSIINFLibrarySkeletonStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
-            ETSIINFLibrarySkeletonStub stub1 = new ETSIINFLibrarySkeletonStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
-            ETSIINFLibrarySkeletonStub stub1_1 = new ETSIINFLibrarySkeletonStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
-            ETSIINFLibrarySkeletonStub stub2 = new ETSIINFLibrarySkeletonStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
-            ETSIINFLibrarySkeletonStub stub3 = new ETSIINFLibrarySkeletonStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stubAdmin = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stub1 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stub1_1 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stub2 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stub3 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
 
             stubAdmin._getServiceClient().engageModule("addressing");
             stubAdmin._getServiceClient().getOptions().setManageSession(true);
