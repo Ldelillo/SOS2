@@ -9,13 +9,13 @@ import sos.t3.a32.library.client.ETSIINFLibraryStub.*;
 
 public class ETSIINFLibraryClient {
 
-    public static void main(String[] args) throws RemoteException {
+    public static void main(String[] args) throws Exception {
         try {
-            ETSIINFLibraryStub stubAdmin = new ETSIINFLibraryStub();
-            ETSIINFLibraryStub stub1 = new ETSIINFLibraryStub();
-            ETSIINFLibraryStub stub1_1 = new ETSIINFLibraryStub();
-            ETSIINFLibraryStub stub2 = new ETSIINFLibraryStub();
-            ETSIINFLibraryStub stub3 = new ETSIINFLibraryStub();
+            ETSIINFLibraryStub stubAdmin = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stub1 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stub1_1 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stub2 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
+            ETSIINFLibraryStub stub3 = new ETSIINFLibraryStub("http://localhost:8080/axis2/services/ETSIINFLibrary");
 
             stubAdmin._getServiceClient().engageModule("addressing");
             stubAdmin._getServiceClient().getOptions().setManageSession(true);
